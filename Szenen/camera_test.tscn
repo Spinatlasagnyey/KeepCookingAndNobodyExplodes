@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://gfybn6ge64ff"]
+
+[ext_resource type="Script" uid="uid://bxmbr5np6eeeq" path="res://Szenen/Scripts/camera_movment.gd" id="1_8bcac"]
+
+[node name="CameraTest" type="Node3D" unique_id=619813641]
+
+[node name="Node3D" type="Node3D" parent="." unique_id=308044093]
+script = ExtResource("1_8bcac")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=895396844]
+current = true
