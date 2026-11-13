@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Merkmal" format=3 uid="uid://dl1eepv2llfur"]
+
+[ext_resource type="Script" uid="uid://bje02hqahcdk1" path="res://Logik/Pilze/Merkmale/merkmal.gd" id="1_1khuh"]
+
+[resource]
+script = ExtResource("1_1khuh")
+metadata/_custom_type_script = "uid://bje02hqahcdk1"

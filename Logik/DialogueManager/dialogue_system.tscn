@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://bxhugcm2o1ejt"]
+
+[ext_resource type="Script" uid="uid://d3vrrpb1ui70e" path="res://Logik/DialogueManager/dialogue_manager.gd" id="1_1te0v"]
+
+[sub_resource type="Animation" id="Animation_fo83j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..:offset_bottom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_im8ok"]
+resource_name = "dialogue_box_open"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..:offset_bottom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -112.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_elsta"]
+_data = {
+&"RESET": SubResource("Animation_fo83j"),
+&"dialogue_box_open": SubResource("Animation_im8ok")
+}
+
+[node name="DialogueSystem" type="Control" unique_id=215883827 groups=["dialogue_manager"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1te0v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=999860939]
+root_node = NodePath("../DialogueSystem/DialogueBox")
+libraries/ = SubResource("AnimationLibrary_elsta")
+
+[node name="Answers" type="VBoxContainer" parent="." unique_id=572989432]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 1.01
+anchor_right = 0.9
+anchor_bottom = 1.21
+offset_bottom = -10.0
+size_flags_stretch_ratio = 0.93
+
+[node name="DialogueSystem" type="HBoxContainer" parent="." unique_id=1576307480]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 1.01
+anchor_right = 0.75
+anchor_bottom = 1.21
+offset_top = -3.05176e-05
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogueBox" type="Control" parent="DialogueSystem" unique_id=918445177]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Sprite2D" type="TextureRect" parent="DialogueSystem/DialogueBox" unique_id=1989650244]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueSystem/DialogueBox" unique_id=1719492660]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)

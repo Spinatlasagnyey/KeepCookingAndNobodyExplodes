@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ccog6rqs31kjj"]
+
+[ext_resource type="Script" uid="uid://cb326iqmmxfyu" path="res://Logik/Rulebook/rulebook.gd" id="1_kmrpa"]
+[ext_resource type="Script" uid="uid://bje02hqahcdk1" path="res://Logik/Pilze/Merkmale/merkmal.gd" id="2_ca5at"]
+[ext_resource type="Texture2D" uid="uid://d132tdl3spwi0" path="res://icon.svg" id="3_4w2ms"]
+
+[sub_resource type="Resource" id="Resource_mrla5"]
+script = ExtResource("2_ca5at")
+id = 2
+type = "Stem"
+part_name = "Thick1"
+texture = ExtResource("3_4w2ms")
+metadata/_custom_type_script = "uid://bje02hqahcdk1"
+
+[node name="Rulebook" type="Node3D" unique_id=544736981]
+script = ExtResource("1_kmrpa")
+merkmale = Array[ExtResource("2_ca5at")]([SubResource("Resource_mrla5")])

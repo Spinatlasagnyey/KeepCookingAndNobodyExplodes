@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3 uid="uid://vj0qycedb74a"]
+
+[ext_resource type="Script" uid="uid://bb8pjjeyl63qn" path="res://UI/DialogueSystem/dialogue_node.gd" id="1_gb315"]
+[ext_resource type="Script" uid="uid://b357n2ulmvikm" path="res://UI/DialogueSystem/dialogue_resource.gd" id="1_taytw"]
+[ext_resource type="Script" uid="uid://dps73btjjo73t" path="res://UI/DialogueSystem/dialogue_answer.gd" id="2_l1vnb"]
+
+[sub_resource type="Resource" id="Resource_l1vnb"]
+script = ExtResource("1_gb315")
+text = "First"
+answers = Array[ExtResource("2_l1vnb")]([])
+next_id = 1
+is_end = false
+end_callable = ""
+metadata/_custom_type_script = "uid://bb8pjjeyl63qn"
+
+[sub_resource type="Resource" id="Resource_rktq4"]
+script = ExtResource("2_l1vnb")
+text = "Yes"
+next_id = 2
+is_negative = false
+metadata/_custom_type_script = "uid://dps73btjjo73t"
+
+[sub_resource type="Resource" id="Resource_econf"]
+script = ExtResource("2_l1vnb")
+text = "Fuck you"
+next_id = 3
+is_negative = true
+metadata/_custom_type_script = "uid://dps73btjjo73t"
+
+[sub_resource type="Resource" id="Resource_xnldv"]
+script = ExtResource("1_gb315")
+text = "Middle but longer so that i can see the [wave][rainbow] typing [/rainbow][/wave]"
+answers = Array[ExtResource("2_l1vnb")]([SubResource("Resource_rktq4"), SubResource("Resource_econf")])
+next_id = 2
+is_end = false
+end_callable = ""
+metadata/_custom_type_script = "uid://bb8pjjeyl63qn"
+
+[sub_resource type="Resource" id="Resource_p8n6u"]
+script = ExtResource("1_gb315")
+text = "Last"
+answers = Array[ExtResource("2_l1vnb")]([])
+next_id = -1
+is_end = true
+end_callable = ""
+metadata/_custom_type_script = "uid://bb8pjjeyl63qn"
+
+[sub_resource type="Resource" id="Resource_86854"]
+script = ExtResource("1_gb315")
+text = "Last but no"
+answers = Array[ExtResource("2_l1vnb")]([])
+next_id = -1
+is_end = true
+end_callable = ""
+metadata/_custom_type_script = "uid://bb8pjjeyl63qn"
+
+[resource]
+script = ExtResource("1_taytw")
+start_id = 0
+nodes = Dictionary[int, ExtResource("1_gb315")]({
+0: SubResource("Resource_l1vnb"),
+1: SubResource("Resource_xnldv"),
+2: SubResource("Resource_p8n6u"),
+3: SubResource("Resource_86854")
+})
