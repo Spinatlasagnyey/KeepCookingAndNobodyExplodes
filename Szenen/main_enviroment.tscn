@@ -1,3 +1,20 @@
 [gd_scene format=3 uid="uid://tlw026oggb1l"]
 
+[ext_resource type="PackedScene" uid="uid://dmy80vcehy38q" path="res://leo/scenes/ui.tscn" id="1_tfupf"]
+[ext_resource type="Script" uid="uid://lruc0pdyucsk" path="res://leo/scripts/event_manager.gd" id="2_cqglr"]
+
 [node name="MainEnviroment" type="Node3D" unique_id=1716867431]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1754533004]
+
+[node name="Ui" parent="CanvasLayer" unique_id=2109838708 instance=ExtResource("1_tfupf")]
+unique_name_in_owner = true
+
+[node name="EventManager" type="Node" parent="." unique_id=426723134]
+script = ExtResource("2_cqglr")
+hunger_per_timeout = 10.0
+
+[node name="HungerTimer" type="Timer" parent="EventManager" unique_id=2117702733]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="EventManager/HungerTimer" to="EventManager" method="_on_hunger_timer_timeout"]
