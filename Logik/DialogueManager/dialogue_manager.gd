@@ -2,6 +2,7 @@ class_name DialogueManager
 extends Control
 
 @onready var dialogue_box_animator: AnimationPlayer = $AnimationPlayer
+@onready var speaker_title: RichTextLabel = $DialogueSystem/DialogueBox/RadioTitle
 @onready var dialogue_box_text: RichTextLabel = $DialogueSystem/DialogueBox/RichTextLabel
 @onready var answers: DialogueAnswerManager = $Answers
 
@@ -46,6 +47,10 @@ func continue_dialogue(starting: bool = false):
 			finish_dialogue()
 			return
 	current_node = current_dialogue.get_node(next_node_id)
+	speaker_title.clear()
+	speaker_title.push_bold()
+	speaker_title.add_text(current_node.speaker_name)
+	speaker_title.pop()
 	await type_sentence(current_node.text)
 	if not current_node.answers.is_empty():
 		answers.spawn_answers(current_node.answers)
