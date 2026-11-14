@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cqek1u1ixks30" path="res://Components/Pilz/mushroom_manager.gd" id="1_ce3ud"]
 [ext_resource type="Shader" uid="uid://dwb8fem1hhjg0" path="res://Assets/Pilze/other_cap_mask.gdshader" id="2_51g6a"]
 [ext_resource type="Texture2D" uid="uid://dq471w2a1v013" path="res://Assets/Pilze/03_Stiel.png" id="2_e13tl"]
-[ext_resource type="Texture2D" uid="uid://sxiybaycxwtj" path="res://Assets/Pilze/01_Maske.png" id="3_7ib2n"]
 [ext_resource type="Texture2D" uid="uid://bxi07eukgcn3t" path="res://Assets/Pilze/06_Kappe.png" id="3_e13tl"]
+[ext_resource type="Texture2D" uid="uid://o1hcp7y4t057" path="res://Assets/Pilze/Maske_Dreiecke.png" id="5_e13tl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2jq0j"]
 shader = ExtResource("2_51g6a")
@@ -58,4 +58,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_7ib2n")
+texture = ExtResource("5_e13tl")

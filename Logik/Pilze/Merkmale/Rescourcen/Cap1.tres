@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_muu43")
+overlay_texture = ExtResource("2_xq5mv")
 id = 2
 part_name = "Cap1"
 texture = ExtResource("2_xq5mv")

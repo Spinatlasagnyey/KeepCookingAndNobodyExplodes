@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ccog6rqs31kjj"]
 
 [ext_resource type="Script" uid="uid://cb326iqmmxfyu" path="res://Logik/Rulebook/rulebook.gd" id="1_kmrpa"]
-[ext_resource type="Resource" uid="uid://dl1eepv2llfur" path="res://Logik/Pilze/Merkmale/Rescourcen/Stem1.tres" id="3_mrla5"]
+[ext_resource type="Resource" uid="uid://b6fvkfygyvxp" path="res://Logik/Pilze/Merkmale/Rescourcen/Mask2.tres" id="3_ux58w"]
 [ext_resource type="Resource" uid="uid://borkdptxp0t2d" path="res://Logik/Pilze/Merkmale/Rescourcen/Cap1.tres" id="4_mrla5"]
 [ext_resource type="Script" uid="uid://c7an6qtn8ccvs" path="res://Logik/Rulebook/combination_rule.gd" id="5_mrla5"]
 [ext_resource type="Script" uid="uid://6hommax7p67w" path="res://Logik/Rulebook/rule.gd" id="5_ux58w"]
@@ -10,7 +10,7 @@
 
 [sub_resource type="Resource" id="Resource_ci1af"]
 script = ExtResource("5_mrla5")
-merkmal1 = ExtResource("3_mrla5")
+merkmal1 = ExtResource("3_ux58w")
 merkmal2 = ExtResource("4_mrla5")
 metadata/_custom_type_script = "uid://c7an6qtn8ccvs"
 
@@ -23,3 +23,19 @@ metadata/_custom_type_script = "uid://sll6xu8f82kn"
 [node name="Rulebook" type="Node3D" unique_id=544736981]
 script = ExtResource("1_kmrpa")
 rules = Array[ExtResource("5_ux58w")]([SubResource("Resource_ci1af"), SubResource("Resource_l8s4m")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1832396457]
+
+[node name="BookPanel" type="PanelContainer" parent="CanvasLayer" unique_id=1679096637]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 612.0
+offset_bottom = 452.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/BookPanel" unique_id=246890190]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Entries" type="VBoxContainer" parent="CanvasLayer/BookPanel/ScrollContainer" unique_id=123659011]
+layout_mode = 2
+size_flags_horizontal = 3

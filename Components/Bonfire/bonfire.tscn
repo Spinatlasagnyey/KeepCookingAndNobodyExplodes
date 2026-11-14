@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://yu1xd0ob2x1w"]
+
+[ext_resource type="PackedScene" uid="uid://cp7kutsvoblvk" path="res://Assets/3D-Objects/Bonfire.fbx" id="1_t7ogg"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2jq0j"]
+initial_velocity_max = 194.23999
+gravity = Vector3(0, 9.8, 0)
+
+[node name="Bonfire" type="Node3D" unique_id=1058289364]
+
+[node name="Bonfire" parent="." unique_id=970891308 instance=ExtResource("1_t7ogg")]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Bonfire" unique_id=167396214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2028514, 0)
+process_material = SubResource("ParticleProcessMaterial_2jq0j")
