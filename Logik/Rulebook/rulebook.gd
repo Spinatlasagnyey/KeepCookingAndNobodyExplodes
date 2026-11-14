@@ -11,11 +11,12 @@ func _ready() -> void:
 	check_poison_outcome(mushes)
 	show_rules()
 
-func check_poison_outcome(mushrooms: Array[Mushroom]):
+func check_poison_outcome(mushrooms: Array[Mushroom]) -> int:
 	var sum: int = 0
 	for rule in rules:
 		sum += rule.check_poison(mushrooms)
 	print("Die Suppe hat ", sum, " Gifft Punkte")
+	return sum
 	
 func show_rules() -> void:
 	for rule in rules:
