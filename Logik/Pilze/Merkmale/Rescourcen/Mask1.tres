@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="MaskMerkmal" format=3 uid="uid://cxlpjypriii8h"]
 
 [ext_resource type="Script" uid="uid://eiogryy68g2j" path="res://Logik/Pilze/Merkmale/mask_merkmal.gd" id="1_6ae08"]
+[ext_resource type="Texture2D" uid="uid://h7kf8pc1wnit" path="res://Assets/Pilze/Dreieck.png" id="1_6xntb"]
 [ext_resource type="Texture2D" uid="uid://o1hcp7y4t057" path="res://Assets/Pilze/Maske_Dreiecke.png" id="2_fukte"]
 
 [resource]
 script = ExtResource("1_6ae08")
+img_texture = ExtResource("1_6xntb")
 part_name = "Mask1"
 texture = ExtResource("2_fukte")
 metadata/_custom_type_script = "uid://eiogryy68g2j"

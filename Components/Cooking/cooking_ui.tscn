@@ -1,9 +1,70 @@
 [gd_scene format=3 uid="uid://d85w6qfcrrc1"]
 
-[node name="CookingUI" type="Control" unique_id=1786990305]
+[ext_resource type="Script" uid="uid://c423kfuqhdq37" path="res://Components/Cooking/cooking_manager.gd" id="1_7gnrb"]
+[ext_resource type="PackedScene" uid="uid://cmg7ivfpgcq3o" path="res://Components/Pilz/pilz.tscn" id="2_6llp0"]
+
+[node name="CookingUI" type="Control" unique_id=1786990305 node_paths=PackedStringArray("mushroom_ui")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7gnrb")
+mushroom_ui = NodePath("Pilz")
+
+[node name="Pilz" parent="." unique_id=52608359 instance=ExtResource("2_6llp0")]
+layout_mode = 1
+
+[node name="TrashMushroom" type="Button" parent="." unique_id=771401031]
+layout_mode = 0
+offset_left = 1057.0
+offset_top = 575.0
+offset_right = 1109.0
+offset_bottom = 615.0
+text = "Trash"
+
+[node name="PutDownMushroom" type="Button" parent="." unique_id=368826198]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 570.0
+offset_right = 127.0
+offset_bottom = 610.0
+text = "Put down"
+
+[node name="UseMushroom" type="Button" parent="." unique_id=27410094]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 567.0
+offset_right = 618.0
+offset_bottom = 607.0
+text = "Put in Pot"
+
+[node name="SquashMushroom" type="Button" parent="." unique_id=1610702239]
+layout_mode = 0
+offset_left = 1057.0
+offset_top = 408.0
+offset_right = 1112.0
+offset_bottom = 448.0
+text = "Sqash"
+
+[node name="CutMushroom" type="Button" parent="." unique_id=149340088]
+layout_mode = 0
+offset_left = 1063.0
+offset_top = 356.0
+offset_right = 1103.0
+offset_bottom = 396.0
+text = "Cut"
+
+[node name="Cook" type="Button" parent="." unique_id=2111777499]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Cook"
+
+[connection signal="pressed" from="TrashMushroom" to="." method="_on_trash_mushroom_pressed"]
+[connection signal="pressed" from="PutDownMushroom" to="." method="_on_put_down_mushroom_pressed"]
+[connection signal="pressed" from="UseMushroom" to="." method="_on_use_mushroom_pressed"]
+[connection signal="pressed" from="SquashMushroom" to="." method="_on_squash_mushroom_pressed"]
+[connection signal="pressed" from="CutMushroom" to="." method="_on_cut_mushroom_pressed"]
+[connection signal="pressed" from="Cook" to="." method="_on_cook_pressed"]

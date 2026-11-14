@@ -12,11 +12,15 @@ var merkmal_rescourcen = ["res://Logik/Pilze/Merkmale/Rescourcen/Cap1.tres",
 "res://Logik/Pilze/Merkmale/Rescourcen/Stem4.tres",
 "res://Logik/Pilze/Merkmale/Rescourcen/Stem5.tres",
 "res://Logik/Pilze/Merkmale/Rescourcen/Stem6.tres",
-"res://Logik/Pilze/Merkmale/Rescourcen/Mask1.tres"]
+"res://Logik/Pilze/Merkmale/Rescourcen/Mask1.tres",
+"res://Logik/Pilze/Merkmale/Rescourcen/Mask2.tres",
+"res://Logik/Pilze/Merkmale/Rescourcen/Mask3.tres"]
 
 var stem_merkmale: Array[StemMerkmal]
 var cap_merkmale: Array[CapMerkmal]
 var mask_merkmale: Array[MaskMerkmal]
+
+var colors: Array[Color] = [Color.FIREBRICK, Color.DARK_BLUE, Color.WEB_GREEN, Color.PURPLE, Color.DARK_ORANGE, Color.TEAL]
 
 func _init() -> void:
 	for merkmal in merkmal_rescourcen:

@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://cmg7ivfpgcq3o"]
 
 [ext_resource type="Script" uid="uid://cqek1u1ixks30" path="res://Components/Pilz/mushroom_manager.gd" id="1_ce3ud"]
-[ext_resource type="Shader" uid="uid://dwb8fem1hhjg0" path="res://Assets/Pilze/other_cap_mask.gdshader" id="2_51g6a"]
+[ext_resource type="Shader" uid="uid://dwb8fem1hhjg0" path="res://Components/Pilz/other_cap_mask.gdshader" id="2_51g6a"]
 [ext_resource type="Texture2D" uid="uid://dq471w2a1v013" path="res://Assets/Pilze/03_Stiel.png" id="2_e13tl"]
 [ext_resource type="Texture2D" uid="uid://bxi07eukgcn3t" path="res://Assets/Pilze/06_Kappe.png" id="3_e13tl"]
+[ext_resource type="Texture2D" uid="uid://cjv87inirmx2a" path="res://Assets/PilzeMaske/06_Maske.png" id="5_51g6a"]
 [ext_resource type="Texture2D" uid="uid://o1hcp7y4t057" path="res://Assets/Pilze/Maske_Dreiecke.png" id="5_e13tl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2jq0j"]
 shader = ExtResource("2_51g6a")
-shader_parameter/mask_sampler = ExtResource("3_e13tl")
+shader_parameter/mask_sampler = ExtResource("5_51g6a")
 shader_parameter/mask_offset = Vector2(0, 0)
 
 [node name="Pilz" type="Control" unique_id=52608359 node_paths=PackedStringArray("cap", "stem", "overlay")]
@@ -22,35 +23,47 @@ grow_vertical = 2
 scale = Vector2(0.745, 0.745)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("1_ce3ud")
-cap = NodePath("Cap")
-stem = NodePath("Stem")
-overlay = NodePath("Cap/Overlay")
+cap = NodePath("Mushroom/Cap")
+stem = NodePath("Mushroom/Stem")
+overlay = NodePath("Mushroom/Cap/Overlay")
 
-[node name="Stem" type="TextureRect" parent="." unique_id=504775306]
+[node name="Mushroom" type="Control" parent="." unique_id=740656162]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stem" type="TextureRect" parent="Mushroom" unique_id=504775306]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -169.60002
+offset_left = -169.60007
 offset_top = -140.79999
-offset_right = 169.6
+offset_right = 169.59995
 offset_bottom = 140.79999
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_e13tl")
 stretch_mode = 4
 
-[node name="Cap" type="TextureRect" parent="." unique_id=1872537407]
+[node name="Cap" type="TextureRect" parent="Mushroom" unique_id=1872537407]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -169.60007
+offset_top = -140.79999
+offset_right = 169.59995
+offset_bottom = 140.79999
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_e13tl")
 stretch_mode = 4
 
-[node name="Overlay" type="TextureRect" parent="Cap" unique_id=1205268907]
+[node name="Overlay" type="TextureRect" parent="Mushroom/Cap" unique_id=1205268907]
 material = SubResource("ShaderMaterial_2jq0j")
 layout_mode = 1
 anchors_preset = 15
@@ -59,3 +72,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_e13tl")
+
+[node name="PreparedMushroom" type="TextureRect" parent="." unique_id=1821720905]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
