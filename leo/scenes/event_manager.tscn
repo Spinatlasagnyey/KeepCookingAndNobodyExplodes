@@ -4,9 +4,8 @@
 
 [node name="EventManager" type="Node" unique_id=1803634714]
 script = ExtResource("1_66soh")
-hunger_per_timeout = 10.0
 
-[node name="HungerTimer" type="Timer" parent="." unique_id=792998455]
+[node name="DayTimer" type="Timer" parent="." unique_id=792998455]
 unique_name_in_owner = true
 
-[connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]
+[connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]

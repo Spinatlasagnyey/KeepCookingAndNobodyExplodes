@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3a2tp")
 
-[node name="HungerProgressBar" type="ProgressBar" parent="." unique_id=96611631]
+[node name="TimerProgressBar" type="ProgressBar" parent="." unique_id=947587432]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 2.0
@@ -19,6 +19,7 @@ offset_top = 26.0
 offset_right = 202.0
 offset_bottom = 53.0
 value = 28.3
+show_percentage = false
 
 [node name="PoisonProgressBar" type="ProgressBar" parent="." unique_id=653448652]
 unique_name_in_owner = true
@@ -28,6 +29,17 @@ offset_top = 63.0
 offset_right = 202.0
 offset_bottom = 90.0
 value = 43.95
+
+[node name="HungerProgressBar" type="ProgressBar" parent="." unique_id=96611631]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 102.0
+offset_right = 203.0
+offset_bottom = 129.0
+max_value = 5.0
+step = 1.0
+show_percentage = false
 
 [node name="GameOverLabel" type="Label" parent="." unique_id=1881356778]
 unique_name_in_owner = true
@@ -42,3 +54,15 @@ text = "YOU ARE DEAD
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Day" type="Label" parent="." unique_id=893905026]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "DAY 99"
+horizontal_alignment = 2
