@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://tlw026oggb1l"]
 
+[ext_resource type="Script" uid="uid://bxmbr5np6eeeq" path="res://Szenen/Scripts/camera_movment.gd" id="1_tfupf"]
+
 [node name="MainEnviroment" type="Node3D" unique_id=1716867431]
+
+[node name="Node3D" type="Node3D" parent="." unique_id=2051307631]
+script = ExtResource("1_tfupf")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=1822980996]
+current = true
