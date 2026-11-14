@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vj8u8o1w8wso"
+path="res://.godot/imported/VICTOR Y.wav-b2056e4aaea9090a313aa691b77dd250.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/VICTOR Y.wav"
+dest_files=["res://.godot/imported/VICTOR Y.wav-b2056e4aaea9090a313aa691b77dd250.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
