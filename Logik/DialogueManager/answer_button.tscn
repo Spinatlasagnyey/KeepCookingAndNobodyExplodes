@@ -2,11 +2,52 @@
 
 [ext_resource type="Script" uid="uid://c0xn2hj6em8de" path="res://Logik/DialogueManager/answer_button.gd" id="1_8eixl"]
 
-[sub_resource type="Theme" id="Theme_sohdb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_normal"]
+bg_color = Color(0.09, 0.105, 0.10, 0.97)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.34, 0.40, 0.36, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
-[node name="AnswerButton" type="TextureButton" unique_id=1040404950]
-custom_minimum_size = Vector2(0, 20)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
+bg_color = Color(0.16, 0.21, 0.18, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
+bg_color = Color(0.23, 0.30, 0.25, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_focus"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.80, 0.88, 0.73, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="AnswerButton" type="Button" unique_id=1040404950]
+custom_minimum_size = Vector2(0, 40)
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
+theme_override_styles/focus = SubResource("StyleBoxFlat_focus")
 script = ExtResource("1_8eixl")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=785979408]
@@ -14,14 +55,15 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = -2.0
+offset_left = 14.0
+offset_top = 4.0
+offset_right = -14.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = SubResource("Theme_sohdb")
+theme_override_colors/default_color = Color(0.96, 0.96, 0.92, 1)
+theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
-fit_content = true
 scroll_active = false
+vertical_alignment = 1

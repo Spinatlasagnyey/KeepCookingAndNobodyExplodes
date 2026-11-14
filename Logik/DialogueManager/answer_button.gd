@@ -1,10 +1,10 @@
 class_name AnswerButton
-extends TextureButton
+extends Button
 
 var next_id: int
 var is_negative: bool
 
-@onready var text: RichTextLabel = $RichTextLabel
+@onready var answer_label: RichTextLabel = $RichTextLabel
 signal answer_pressed(id: int)
 signal selected(node: Node)
 
@@ -12,8 +12,8 @@ func _ready() -> void:
 	self.pressed.connect(on_answer_pressed)
 	self.focus_entered.connect(on_selected)
 
-func set_text(content: String):
-	text.append_text(content)
+func set_answer_text(content: String):
+	answer_label.append_text(content)
 
 func on_answer_pressed():
 	answer_pressed.emit(next_id)

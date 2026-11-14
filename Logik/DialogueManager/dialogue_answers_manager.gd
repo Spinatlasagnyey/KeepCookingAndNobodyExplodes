@@ -5,7 +5,7 @@ extends VBoxContainer
 @export var answer_preload: PackedScene
 
 var answers_available: bool = false
-var selected_answer: TextureButton
+var selected_answer: AnswerButton
 
 func _input(event: InputEvent) -> void:
 	if answers_available:
@@ -30,7 +30,7 @@ func spawn_answers(answers: Array[DialogueAnswer]): #tomorrow make answers selec
 	for answer in answers:
 		var inst: AnswerButton = answer_preload.instantiate()
 		add_child(inst)
-		inst.set_text(answer.text)
+		inst.set_answer_text(answer.text)
 		inst.next_id = answer.next_id
 		inst.is_negative = answer.is_negative
 		inst.answer_pressed.connect(answer_pressed)

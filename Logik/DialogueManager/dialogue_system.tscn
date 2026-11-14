@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bxhugcm2o1ejt"]
 
 [ext_resource type="Script" uid="uid://d3vrrpb1ui70e" path="res://Logik/DialogueManager/dialogue_manager.gd" id="1_1te0v"]
+[ext_resource type="Script" uid="uid://dkn7s8tnooc85" path="res://Logik/DialogueManager/dialogue_answers_manager.gd" id="2_x8gi8"]
+[ext_resource type="PackedScene" uid="uid://pnj538ncvhr2" path="res://Logik/DialogueManager/answer_button.tscn" id="3_acjif"]
+[ext_resource type="Texture2D" uid="uid://cjs62jdg4phbh" path="res://Assets/Dialogue/background.png" id="4_acjif"]
 
 [sub_resource type="Animation" id="Animation_fo83j"]
 length = 0.001
@@ -16,21 +19,45 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 384.98)]
+}
 
 [sub_resource type="Animation" id="Animation_im8ok"]
 resource_name = "dialogue_box_open"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("../..:offset_bottom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0.033333335, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -112.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03327852, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 384.98), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_elsta"]
@@ -46,6 +73,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 384.98)
 script = ExtResource("1_1te0v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=999860939]
@@ -53,25 +82,33 @@ root_node = NodePath("../DialogueSystem/DialogueBox")
 libraries/ = SubResource("AnimationLibrary_elsta")
 
 [node name="Answers" type="VBoxContainer" parent="." unique_id=572989432]
-custom_minimum_size = Vector2(150, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.75
-anchor_top = 1.01
-anchor_right = 0.9
-anchor_bottom = 1.21
-offset_bottom = -10.0
-size_flags_stretch_ratio = 0.93
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -383.0
+offset_right = 170.0
+offset_bottom = -295.0
+grow_vertical = 0
+theme_override_constants/separation = 8
+alignment = 2
+script = ExtResource("2_x8gi8")
+answer_preload = ExtResource("3_acjif")
 
 [node name="DialogueSystem" type="HBoxContainer" parent="." unique_id=1576307480]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.25
-anchor_top = 1.01
-anchor_right = 0.75
-anchor_bottom = 1.21
-offset_top = -3.05176e-05
-offset_bottom = -10.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -324.0
+offset_right = 225.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -82,21 +119,34 @@ size_flags_stretch_ratio = 3.0
 
 [node name="Sprite2D" type="TextureRect" parent="DialogueSystem/DialogueBox" unique_id=1989650244]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_acjif")
+expand_mode = 1
+
+[node name="RadioTitle" type="RichTextLabel" parent="DialogueSystem/DialogueBox" unique_id=517189031]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 63.0
+offset_right = 368.0
+offset_bottom = 91.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.145, 0.145, 0.145, 1)
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "[b]FUNK[/b]"
+scroll_active = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="DialogueSystem/DialogueBox" unique_id=1719492660]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = -10.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 83.0
+offset_top = 103.0
+offset_right = 368.0
+offset_bottom = 179.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.145, 0.145, 0.145, 1)
+theme_override_font_sizes/normal_font_size = 22

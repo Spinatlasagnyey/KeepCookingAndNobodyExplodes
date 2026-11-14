@@ -1,7 +1,46 @@
 [gd_resource type="Resource" script_class="DialogueResource" format=3 uid="uid://vj0qycedb74a"]
 
 [ext_resource type="Script" uid="uid://vnh8i3fyp2ny" path="res://Logik/DialogueManager/dialogue_node.gd" id="1_wldye"]
+[ext_resource type="Script" uid="uid://bdkjmj1l0link" path="res://Logik/DialogueManager/dialogue_answer.gd" id="2_ea3hg"]
 [ext_resource type="Script" uid="uid://ba4v5gvvu0cmi" path="res://Logik/DialogueManager/dialogue_resource.gd" id="2_lxm2f"]
+
+[sub_resource type="Resource" id="Resource_lxm2f"]
+script = ExtResource("2_ea3hg")
+text = "Ey das kann nicht sein..."
+next_id = 1
+metadata/_custom_type_script = "uid://bdkjmj1l0link"
+
+[sub_resource type="Resource" id="Resource_ea3hg"]
+script = ExtResource("2_ea3hg")
+text = "Chillig kein Ding, Pilze sind lecker."
+next_id = 2
+is_negative = true
+metadata/_custom_type_script = "uid://bdkjmj1l0link"
+
+[sub_resource type="Resource" id="Resource_p32m1"]
+script = ExtResource("1_wldye")
+text = "Heli ist abgestürtzt... sorry..."
+answers = Array[ExtResource("2_ea3hg")]([SubResource("Resource_lxm2f"), SubResource("Resource_ea3hg")])
+next_id = 1
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_2hmn5"]
+script = ExtResource("1_wldye")
+text = "Doch, bye bye"
+next_id = 1
+is_end = true
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_5t7w8"]
+script = ExtResource("1_wldye")
+text = "Nice, guten Appetit."
+is_end = true
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
 [resource]
 script = ExtResource("2_lxm2f")
+nodes = Dictionary[int, ExtResource("1_wldye")]({
+0: SubResource("Resource_p32m1"),
+1: SubResource("Resource_2hmn5"),
+2: SubResource("Resource_5t7w8")
+})

@@ -1,11 +1,43 @@
 [gd_scene format=3 uid="uid://tlw026oggb1l"]
 
-[ext_resource type="Script" uid="uid://bxmbr5np6eeeq" path="res://Szenen/Scripts/camera_movment.gd" id="1_tfupf"]
+[ext_resource type="PackedScene" uid="uid://bxhugcm2o1ejt" path="res://Logik/DialogueManager/dialogue_system.tscn" id="1_tfupf"]
+[ext_resource type="Script" uid="uid://bxmbr5np6eeeq" path="res://Szenen/Scripts/camera_movment.gd" id="2_axpl5"]
+[ext_resource type="Script" uid="uid://oe5x8uh37k6l" path="res://Szenen/dialogue_collection.gd" id="2_q5mer"]
+[ext_resource type="Script" uid="uid://ba4v5gvvu0cmi" path="res://Logik/DialogueManager/dialogue_resource.gd" id="3_60yx3"]
+[ext_resource type="Resource" uid="uid://vj0qycedb74a" path="res://Logik/DialogueManager/dialogue_resource.tres" id="4_60yx3"]
+[ext_resource type="Script" uid="uid://dsskgqav1tf1e" path="res://Szenen/radio_cube.gd" id="7_anygr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xql7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xql7"]
 
 [node name="MainEnviroment" type="Node3D" unique_id=1716867431]
 
-[node name="Node3D" type="Node3D" parent="." unique_id=2051307631]
-script = ExtResource("1_tfupf")
+[node name="CameraRig" type="Node3D" parent="." unique_id=456108787]
+script = ExtResource("2_axpl5")
 
-[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=1822980996]
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=1275184382]
 current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=103350723]
+script = ExtResource("2_q5mer")
+dialogues = Dictionary[String, ExtResource("3_60yx3")]({
+"hello": ExtResource("4_60yx3")
+})
+
+[node name="DialogueSystem" parent="CanvasLayer" unique_id=215883827 instance=ExtResource("1_tfupf")]
+offset_top = 2.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="RadioCube" type="StaticBody3D" parent="." unique_id=916767358 node_paths=PackedStringArray("dialogue_collection")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+script = ExtResource("7_anygr")
+dialogue_collection = NodePath("../CanvasLayer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RadioCube" unique_id=732477871]
+mesh = SubResource("BoxMesh_0xql7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RadioCube" unique_id=601102096]
+shape = SubResource("BoxShape3D_0xql7")

@@ -5,7 +5,6 @@ extends Control
 @onready var dialogue_box_text: RichTextLabel = $DialogueSystem/DialogueBox/RichTextLabel
 @onready var answers: DialogueAnswerManager = $Answers
 
-
 @export var typing_delay: float = 0.02
 
 var current_dialogue: DialogueResource
