@@ -11,3 +11,6 @@ func play_dialogue(dialogue_id: String, caller: Node) -> void:
 		return
 
 	dialogue_system.start_dialogue(caller, dialogue)
+
+
+	

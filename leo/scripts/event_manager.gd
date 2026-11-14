@@ -1,13 +1,13 @@
 extends Node
-@onready var day_timer : Timer = %DayTimer
 
 signal time_passed_changed(value: float)
 signal hunger_value_changed(value : float)
 signal poison_value_changed(value : float)
 signal game_over_signal(game_over_message : String)
 signal new_day(dayInt : int, seconds_per_day : float)
+signal dialogue_alert(dialogue : DialogueResource)
 
-const SECONDS_PER_DAY = 3
+const SECONDS_PER_DAY = 180
 const RESCUE_DAY = 7
 
 const STARTING_FULLNESS = 0
@@ -18,6 +18,11 @@ const STARTING_POISON = 0
 const MAX_POISON = 100 
 const MINUS_POISON_PER_DAY = 20
 
+@onready var day_timer : Timer = %DayTimer
+
+@export var dialogue_schedule: Array[DialogueScheduled] = []
+var working_dialogue_schedule : Array[DialogueScheduled]
+
 var time_passed : float = 0.0
 var current_day : int = 1
 var current_fullness
@@ -26,6 +31,8 @@ var current_poison
 var is_game_over = false
 
 func _ready() -> void:
+	working_dialogue_schedule = dialogue_schedule.duplicate()
+	
 	current_fullness = STARTING_FULLNESS
 	current_poison = STARTING_POISON
 	await get_tree().process_frame
@@ -53,6 +60,8 @@ func _physics_process(delta: float) -> void:
 		print("add fullness")
 		
 	check_game_over()
+	
+	check_dialogue_due()
 		
 func _on_day_timer_timeout() -> void:
 	print("timer timeout")
@@ -99,3 +108,15 @@ func start_new_day():
 	hunger_value_changed.emit(current_fullness)
 	current_poison -= max(0, MINUS_POISON_PER_DAY)
 	poison_value_changed.emit(current_poison)
+
+func check_dialogue_due():
+	if working_dialogue_schedule.is_empty():
+		return
+	var day_time_progress = time_passed / SECONDS_PER_DAY
+	for dialogue_scheduled in working_dialogue_schedule:
+		if dialogue_scheduled.day <= current_day and dialogue_scheduled.time_of_day_percent <= day_time_progress:
+			# Zeitpunkt eines Events erreicht / überschritten
+			print(str(dialogue_scheduled) + " fällig")
+			dialogue_alert.emit(dialogue_scheduled.dialogue_resource)
+			working_dialogue_schedule.erase(dialogue_scheduled)
+	

@@ -1,9 +1,19 @@
 [gd_scene format=3 uid="uid://bkp1wgkkil8ej"]
 
 [ext_resource type="Script" uid="uid://lruc0pdyucsk" path="res://leo/scripts/event_manager.gd" id="1_66soh"]
+[ext_resource type="Resource" uid="uid://cf7vq6i6515e0" path="res://Resources/Dialogues/first_contact.tres" id="2_hn5gc"]
+[ext_resource type="Script" uid="uid://b7wuildcvmwcb" path="res://leo/scripts/dialogue_scheduled.gd" id="3_1ot2l"]
+
+[sub_resource type="Resource" id="Resource_66soh"]
+script = ExtResource("3_1ot2l")
+day = 1
+time_of_day_percent = 0.2
+dialogue_resource = ExtResource("2_hn5gc")
+metadata/_custom_type_script = "uid://b7wuildcvmwcb"
 
 [node name="EventManager" type="Node" unique_id=1803634714]
 script = ExtResource("1_66soh")
+dialogue_schedule = Array[Object]([SubResource("Resource_66soh")])
 
 [node name="DayTimer" type="Timer" parent="." unique_id=792998455]
 unique_name_in_owner = true

@@ -30,6 +30,7 @@ dialogues = Dictionary[String, ExtResource("3_60yx3")]({
 })
 
 [node name="DialogueSystem" parent="CanvasLayer" unique_id=215883827 instance=ExtResource("1_tfupf")]
+unique_name_in_owner = true
 offset_top = 2.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
