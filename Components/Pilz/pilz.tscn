@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cmg7ivfpgcq3o"]
+
+[ext_resource type="Texture2D" uid="uid://bdtfqx0a724om" path="res://Assets/Pilze/01_Stiel.png" id="1_2x1t8"]
+[ext_resource type="Texture2D" uid="uid://dq10ux54wb1yj" path="res://Assets/Pilze/01_Kappe.png" id="2_ce3ud"]
+
+[node name="Pilz" type="Control" unique_id=52608359]
+layout_mode = 3
+anchor_left = 0.3
+anchor_top = 0.1
+anchor_right = 0.7
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Stem" type="TextureRect" parent="." unique_id=504775306]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -169.60002
+offset_top = -140.79999
+offset_right = 169.6
+offset_bottom = 140.79999
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2x1t8")
+stretch_mode = 4
+
+[node name="Cap" type="TextureRect" parent="." unique_id=1872537407]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ce3ud")
+stretch_mode = 4

@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="Merkmal" format=3 uid="uid://dl1eepv2llfur"]
+[gd_resource type="Resource" script_class="StemMerkmal" format=3 uid="uid://dl1eepv2llfur"]
 
-[ext_resource type="Script" uid="uid://bje02hqahcdk1" path="res://Logik/Pilze/Merkmale/merkmal.gd" id="1_1khuh"]
+[ext_resource type="Script" uid="uid://bm5bo7t8crru5" path="res://Logik/Pilze/Merkmale/stem_merkmal.gd" id="1_1khuh"]
+[ext_resource type="Texture2D" uid="uid://bdtfqx0a724om" path="res://Assets/Pilze/01_Stiel.png" id="2_2m783"]
 
 [resource]
 script = ExtResource("1_1khuh")
-metadata/_custom_type_script = "uid://bje02hqahcdk1"
+id = 1
+part_name = "Stem1"
+texture = ExtResource("2_2m783")
+metadata/_custom_type_script = "uid://bm5bo7t8crru5"

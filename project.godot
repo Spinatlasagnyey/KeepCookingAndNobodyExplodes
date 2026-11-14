@@ -14,6 +14,10 @@ config/name="KeepCookingAndNobodyExplodes"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Game="*uid://0jet45mj1721"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -23,6 +27,7 @@ window/stretch/aspect="expand"
 
 folder_colors={
 "res://Assets/": "yellow",
+"res://Components/": "pink",
 "res://Logik/": "blue",
 "res://Szenen/": "red"
 }
