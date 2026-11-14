@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bkp1wgkkil8ej"]
+
+[ext_resource type="Script" uid="uid://lruc0pdyucsk" path="res://leo/scripts/event_manager.gd" id="1_66soh"]
+
+[node name="EventManager" type="Node" unique_id=1803634714]
+script = ExtResource("1_66soh")
+
+[node name="DayTimer" type="Timer" parent="." unique_id=792998455]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]
