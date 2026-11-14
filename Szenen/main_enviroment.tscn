@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://oe5x8uh37k6l" path="res://Szenen/dialogue_collection.gd" id="2_q5mer"]
 [ext_resource type="Script" uid="uid://ba4v5gvvu0cmi" path="res://Logik/DialogueManager/dialogue_resource.gd" id="3_60yx3"]
 [ext_resource type="Resource" uid="uid://vj0qycedb74a" path="res://Logik/DialogueManager/dialogue_resource.tres" id="4_60yx3"]
+[ext_resource type="PackedScene" uid="uid://dmy80vcehy38q" path="res://leo/scenes/ui.tscn" id="6_anygr"]
 [ext_resource type="Script" uid="uid://dsskgqav1tf1e" path="res://Szenen/radio_cube.gd" id="7_anygr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0xql7"]
@@ -29,6 +30,9 @@ dialogues = Dictionary[String, ExtResource("3_60yx3")]({
 offset_top = 2.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Ui" parent="CanvasLayer" unique_id=2109838708 instance=ExtResource("6_anygr")]
 mouse_filter = 2
 
 [node name="RadioCube" type="StaticBody3D" parent="." unique_id=916767358 node_paths=PackedStringArray("dialogue_collection")]
