@@ -6,11 +6,18 @@ extends Rule
 
 @export var poison_effect: int = 1
 
-func _init() -> void:
-	call_deferred("set_description")
+func get_description() -> String:
+	if merkmal1 == null or merkmal2 == null:
+		return "This rules needs a feature."
 
-func set_description():
-	description = "Wenn " + merkmal1.part_name + " dann nicht " + merkmal2.part_name
+	return "Do not cook %s and %s together." % [
+		merkmal_als_bild(merkmal1),
+		merkmal_als_bild(merkmal2)
+	]
+
+
+func get_merkmale() -> Array[Merkmal]:
+	return [merkmal1, merkmal2]
 
 func check_poison(mushrooms: Array[Mushroom]) -> int:
 	for pilz in mushrooms:

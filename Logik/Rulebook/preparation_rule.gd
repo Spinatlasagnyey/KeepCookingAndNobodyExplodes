@@ -8,14 +8,20 @@ extends Rule
 
 @export var poison_effect = 1
 
-func _init() -> void:
-	call_deferred("set_description")
+func get_description() -> String:
+	if merkmal == null:
+		return "This rules needs a feature."
 
-func set_description():
+	var bild := merkmal_als_bild(merkmal)
+	var method_name := Game.get_preparation_name(preparation_method)
+
 	if inversed:
-		description = "Wenn " + merkmal.part_name + " dann " + Game.get_preparation_name(preparation_method)
-	else:
-		description = "Wenn " + merkmal.part_name + " dann nicht " + Game.get_preparation_name(preparation_method)
+		return "%s absolutely %s." % [bild, method_name]
+
+	return "%s not %s." % [bild, method_name]
+
+func get_merkmale() -> Array[Merkmal]:
+	return [merkmal]
 
 func check_poison(mushrooms: Array[Mushroom]) -> int:
 	for pilz in mushrooms:
