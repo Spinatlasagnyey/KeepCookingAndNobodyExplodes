@@ -36,6 +36,10 @@ folder_colors={
 "res://leo/": "purple"
 }
 
+[global_group]
+
+audioStreamPlayerRadio=""
+
 [input]
 
 add_poison_debug={

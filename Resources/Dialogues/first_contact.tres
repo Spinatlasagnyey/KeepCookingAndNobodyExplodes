@@ -3,66 +3,84 @@
 [ext_resource type="Script" uid="uid://vnh8i3fyp2ny" path="res://Logik/DialogueManager/dialogue_node.gd" id="1_05ccf"]
 [ext_resource type="Script" uid="uid://bdkjmj1l0link" path="res://Logik/DialogueManager/dialogue_answer.gd" id="2_03xv4"]
 [ext_resource type="Script" uid="uid://ba4v5gvvu0cmi" path="res://Logik/DialogueManager/dialogue_resource.gd" id="2_yjcjn"]
+[ext_resource type="AudioStream" uid="uid://dyx4va0n6d8bp" path="res://Assets/Audio/SFX/WalkyTalkySFX.wav" id="3_03xv4"]
 
 [sub_resource type="Resource" id="Resource_pnde1"]
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "Maydey, mayday, please I need help, I crashed on a small island ... again"
+audio = ExtResource("3_03xv4")
+next_id = 1
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
 [sub_resource type="Resource" id="Resource_yjcjn"]
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "Mayday, mayday, please hel-"
+audio = ExtResource("3_03xv4")
+next_id = 2
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
 [sub_resource type="Resource" id="Resource_4esj2"]
 script = ExtResource("1_05ccf")
 text = "Hello!!!! Hello, can you hear me???"
+audio = ExtResource("3_03xv4")
+next_id = 3
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
 [sub_resource type="Resource" id="Resource_7xlyr"]
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "Hello! Hello! I can hear you!!"
+audio = ExtResource("3_03xv4")
+next_id = 4
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
 [sub_resource type="Resource" id="Resource_w1tuj"]
 script = ExtResource("1_05ccf")
 text = "HELLO??? "
+audio = ExtResource("3_03xv4")
+next_id = 5
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
 [sub_resource type="Resource" id="Resource_03xv4"]
 script = ExtResource("1_05ccf")
 text = "I CAN HEAR YOU YES"
+audio = ExtResource("3_03xv4")
+next_id = 6
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
 [sub_resource type="Resource" id="Resource_41fqy"]
 script = ExtResource("1_05ccf")
 text = "Oh. There are my head phones!"
+next_id = 7
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
 [sub_resource type="Resource" id="Resource_y60rt"]
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "...can you help me? I crashed with my plane on a lost island, can you send someone to rescue me?"
+next_id = 8
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
 [sub_resource type="Resource" id="Resource_alcoo"]
 script = ExtResource("1_05ccf")
 text = "Yes yes I will *noise*"
+next_id = 9
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
 [sub_resource type="Resource" id="Resource_034sm"]
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "PiIIEEEPPP"
+next_id = 10
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
 [sub_resource type="Resource" id="Resource_ma86u"]
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "PIEEP PIEP piep ... PIIIEEEPPPP"
+next_id = 11
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
 [sub_resource type="Resource" id="Resource_12vk5"]

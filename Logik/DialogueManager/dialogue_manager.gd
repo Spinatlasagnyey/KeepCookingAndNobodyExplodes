@@ -46,7 +46,9 @@ func continue_dialogue(starting: bool = false):
 		if current_node.is_end:
 			finish_dialogue()
 			return
+	
 	current_node = current_dialogue.get_node(next_node_id)
+	play_audio()
 	speaker_title.clear()
 	speaker_title.push_bold()
 	speaker_title.add_text(current_node.speaker_name)
@@ -87,3 +89,15 @@ func finish_dialogue():
 		else:
 			print(current_caller.name + ' does not have a function called: ' + current_node.end_callable)
 	dialogue_box_animator.play_backwards("dialogue_box_open")
+	
+func play_audio():
+	var audioPlayer = get_tree().get_first_node_in_group("audioStreamPlayerRadio")
+	print(audioPlayer)
+	if audioPlayer.is_in_group("audioStreamPlayerRadio"):
+		print("Player found")
+		audioPlayer.stream = current_node.audio
+		audioPlayer.play()
+	else:
+		print("Player not found")
+		
+	

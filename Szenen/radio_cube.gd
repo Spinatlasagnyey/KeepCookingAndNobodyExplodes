@@ -1,5 +1,8 @@
 extends StaticBody3D
 
+@onready var audioPlayer: AudioStreamPlayer3D = $AudioStreamPlayer3DRadio
+
+@export var alertSound: AudioStream 
 @export var dialogue_collection: DialogueCollection
 
 func _input_event(
@@ -11,4 +14,8 @@ func _input_event(
 ) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			dialogue_collection.play_dialogue("hello", self)
+			dialogue_collection.play_dialogue("first_contact", self)
+
+func play_alert():
+	audioPlayer.stream = alertSound
+	audioPlayer.play()
