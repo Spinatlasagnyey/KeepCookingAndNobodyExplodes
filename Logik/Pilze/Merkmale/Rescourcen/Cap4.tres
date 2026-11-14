@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_dx308")
+overlay_texture = ExtResource("2_agfts")
 part_name = "Cap4"
 texture = ExtResource("2_agfts")
 metadata/_custom_type_script = "uid://bn764nd3m7133"

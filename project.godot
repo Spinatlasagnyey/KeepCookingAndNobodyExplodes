@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 EventManager="*uid://bkp1wgkkil8ej"
 Game="*uid://0jet45mj1721"
+SoupManager="*uid://bb25cqxiyjvxn"
 
 [display]
 
