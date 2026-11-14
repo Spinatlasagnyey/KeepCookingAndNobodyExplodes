@@ -1,6 +1,8 @@
 class_name DialogueNode
 extends Resource
 
+@export var speaker_name: String = "Harald"
+
 @export_multiline var text: String
 
 @export var answers: Array[DialogueAnswer] = []
