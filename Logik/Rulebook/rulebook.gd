@@ -5,7 +5,7 @@ extends Node
 
 func _ready() -> void:
 	var mush1: Mushroom = Mushroom.new()
-	mush1.set_merkmale(Game.stem_merkmale[0], Game.cap_merkmale[0], MaskMerkmal.new())
+	mush1.set_merkmale(Game.cap_merkmale[0], Game.stem_merkmale[0], MaskMerkmal.new())
 	var mushes: Array[Mushroom] = [mush1]
 	check_poison_outcome(mushes)
 

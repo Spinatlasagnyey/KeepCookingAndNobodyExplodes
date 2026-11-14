@@ -9,7 +9,7 @@ var preparation_method: Game.PreparationMethod
 
 var merkmale: Array[Merkmal]
 
-func set_merkmale(stem_merkmal: StemMerkmal, cap_merkmal: CapMerkmal, mask_merkmal: MaskMerkmal):
+func set_merkmale(cap_merkmal: CapMerkmal, stem_merkmal: StemMerkmal, mask_merkmal: MaskMerkmal):
 	stem = stem_merkmal
 	cap = cap_merkmal
 	mask = mask_merkmal

@@ -1,12 +1,24 @@
 extends Node
 
-var merkmal_rescourcen = ["res://Logik/Pilze/Merkmale/Rescourcen/Cap1.tres", "res://Logik/Pilze/Merkmale/Rescourcen/Stem1.tres"]
+var merkmal_rescourcen = ["res://Logik/Pilze/Merkmale/Rescourcen/Cap1.tres",  
+"res://Logik/Pilze/Merkmale/Rescourcen/Cap2.tres",
+"res://Logik/Pilze/Merkmale/Rescourcen/Cap3.tres",
+"res://Logik/Pilze/Merkmale/Rescourcen/Cap4.tres",
+"res://Logik/Pilze/Merkmale/Rescourcen/Cap5.tres",
+"res://Logik/Pilze/Merkmale/Rescourcen/Cap6.tres",
+"res://Logik/Pilze/Merkmale/Rescourcen/Stem1.tres", 
+"res://Logik/Pilze/Merkmale/Rescourcen/Stem2.tres",
+"res://Logik/Pilze/Merkmale/Rescourcen/Stem3.tres",
+"res://Logik/Pilze/Merkmale/Rescourcen/Stem4.tres",
+"res://Logik/Pilze/Merkmale/Rescourcen/Stem5.tres",
+"res://Logik/Pilze/Merkmale/Rescourcen/Stem6.tres",
+"res://Logik/Pilze/Merkmale/Rescourcen/Mask1.tres"]
 
 var stem_merkmale: Array[StemMerkmal]
 var cap_merkmale: Array[CapMerkmal]
-var mask_merkmal: Array[MaskMerkmal]
+var mask_merkmale: Array[MaskMerkmal]
 
-func _ready() -> void:
+func _init() -> void:
 	for merkmal in merkmal_rescourcen:
 		var m: Merkmal = load(merkmal)
 		if m and m is Merkmal:
@@ -15,7 +27,7 @@ func _ready() -> void:
 			elif m is CapMerkmal:
 				cap_merkmale.append(m)
 			elif m is MaskMerkmal:
-				mask_merkmal.append(m)
+				mask_merkmale.append(m)
 
 enum PreparationMethod {
 	CUT,

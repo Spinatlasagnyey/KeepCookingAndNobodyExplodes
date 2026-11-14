@@ -5,6 +5,8 @@
 [ext_resource type="Resource" uid="uid://borkdptxp0t2d" path="res://Logik/Pilze/Merkmale/Rescourcen/Cap1.tres" id="4_mrla5"]
 [ext_resource type="Script" uid="uid://c7an6qtn8ccvs" path="res://Logik/Rulebook/combination_rule.gd" id="5_mrla5"]
 [ext_resource type="Script" uid="uid://6hommax7p67w" path="res://Logik/Rulebook/rule.gd" id="5_ux58w"]
+[ext_resource type="Resource" uid="uid://cdhnu3icbf8ii" path="res://Logik/Pilze/Merkmale/Rescourcen/Cap3.tres" id="6_ux58w"]
+[ext_resource type="Script" uid="uid://sll6xu8f82kn" path="res://Logik/Rulebook/preparation_rule.gd" id="7_vnha0"]
 
 [sub_resource type="Resource" id="Resource_ci1af"]
 script = ExtResource("5_mrla5")
@@ -12,6 +14,12 @@ merkmal1 = ExtResource("3_mrla5")
 merkmal2 = ExtResource("4_mrla5")
 metadata/_custom_type_script = "uid://c7an6qtn8ccvs"
 
+[sub_resource type="Resource" id="Resource_l8s4m"]
+script = ExtResource("7_vnha0")
+merkmal = ExtResource("6_ux58w")
+preparation_method = 1
+metadata/_custom_type_script = "uid://sll6xu8f82kn"
+
 [node name="Rulebook" type="Node3D" unique_id=544736981]
 script = ExtResource("1_kmrpa")
-rules = Array[ExtResource("5_ux58w")]([SubResource("Resource_ci1af")])
+rules = Array[ExtResource("5_ux58w")]([SubResource("Resource_ci1af"), SubResource("Resource_l8s4m")])

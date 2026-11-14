@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CapMerkmal" format=3 uid="uid://cdhnu3icbf8ii"]
+
+[ext_resource type="Script" uid="uid://bn764nd3m7133" path="res://Logik/Pilze/Merkmale/cap_merkmal.gd" id="1_jouf3"]
+[ext_resource type="Texture2D" uid="uid://cow4yehwu1b88" path="res://Assets/Pilze/03_Kappe.png" id="2_204lr"]
+
+[resource]
+script = ExtResource("1_jouf3")
+part_name = "Cap3"
+texture = ExtResource("2_204lr")
+metadata/_custom_type_script = "uid://bn764nd3m7133"

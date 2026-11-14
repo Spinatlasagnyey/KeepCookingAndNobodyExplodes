@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MaskMerkmal" format=3 uid="uid://cxlpjypriii8h"]
+
+[ext_resource type="Script" uid="uid://eiogryy68g2j" path="res://Logik/Pilze/Merkmale/mask_merkmal.gd" id="1_6ae08"]
+[ext_resource type="Texture2D" uid="uid://sxiybaycxwtj" path="res://Assets/Pilze/01_Maske.png" id="2_fukte"]
+
+[resource]
+script = ExtResource("1_6ae08")
+texture = ExtResource("2_fukte")
+metadata/_custom_type_script = "uid://eiogryy68g2j"

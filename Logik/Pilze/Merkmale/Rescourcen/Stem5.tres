@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StemMerkmal" format=3 uid="uid://dcoq44uadu12c"]
+
+[ext_resource type="Script" uid="uid://bm5bo7t8crru5" path="res://Logik/Pilze/Merkmale/stem_merkmal.gd" id="1_c1xno"]
+[ext_resource type="Texture2D" uid="uid://cg6ppnj6sqll8" path="res://Assets/Pilze/05_Stiel.png" id="2_vk3os"]
+
+[resource]
+script = ExtResource("1_c1xno")
+part_name = "Stem5"
+texture = ExtResource("2_vk3os")
+metadata/_custom_type_script = "uid://bm5bo7t8crru5"

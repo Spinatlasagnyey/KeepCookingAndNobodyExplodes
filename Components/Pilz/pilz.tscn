@@ -1,9 +1,17 @@
 [gd_scene format=3 uid="uid://cmg7ivfpgcq3o"]
 
-[ext_resource type="Texture2D" uid="uid://bdtfqx0a724om" path="res://Assets/Pilze/01_Stiel.png" id="1_2x1t8"]
-[ext_resource type="Texture2D" uid="uid://dq10ux54wb1yj" path="res://Assets/Pilze/01_Kappe.png" id="2_ce3ud"]
+[ext_resource type="Script" uid="uid://cqek1u1ixks30" path="res://Components/Pilz/mushroom_manager.gd" id="1_ce3ud"]
+[ext_resource type="Shader" uid="uid://dwb8fem1hhjg0" path="res://Assets/Pilze/other_cap_mask.gdshader" id="2_51g6a"]
+[ext_resource type="Texture2D" uid="uid://dq471w2a1v013" path="res://Assets/Pilze/03_Stiel.png" id="2_e13tl"]
+[ext_resource type="Texture2D" uid="uid://sxiybaycxwtj" path="res://Assets/Pilze/01_Maske.png" id="3_7ib2n"]
+[ext_resource type="Texture2D" uid="uid://bxi07eukgcn3t" path="res://Assets/Pilze/06_Kappe.png" id="3_e13tl"]
 
-[node name="Pilz" type="Control" unique_id=52608359]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2jq0j"]
+shader = ExtResource("2_51g6a")
+shader_parameter/mask_sampler = ExtResource("3_e13tl")
+shader_parameter/mask_offset = Vector2(0, 0)
+
+[node name="Pilz" type="Control" unique_id=52608359 node_paths=PackedStringArray("cap", "stem", "overlay")]
 layout_mode = 3
 anchor_left = 0.3
 anchor_top = 0.1
@@ -11,7 +19,12 @@ anchor_right = 0.7
 anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.745, 0.745)
 pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_ce3ud")
+cap = NodePath("Cap")
+stem = NodePath("Stem")
+overlay = NodePath("Cap/Overlay")
 
 [node name="Stem" type="TextureRect" parent="." unique_id=504775306]
 layout_mode = 1
@@ -24,7 +37,7 @@ offset_right = 169.6
 offset_bottom = 140.79999
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2x1t8")
+texture = ExtResource("2_e13tl")
 stretch_mode = 4
 
 [node name="Cap" type="TextureRect" parent="." unique_id=1872537407]
@@ -34,5 +47,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ce3ud")
+texture = ExtResource("3_e13tl")
 stretch_mode = 4
+
+[node name="Overlay" type="TextureRect" parent="Cap" unique_id=1205268907]
+material = SubResource("ShaderMaterial_2jq0j")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7ib2n")
