@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Game="*uid://0jet45mj1721"
 EventManager="*uid://bkp1wgkkil8ej"
+Game="*uid://0jet45mj1721"
 
 [display]
 
@@ -31,6 +31,7 @@ folder_colors={
 "res://Assets/": "yellow",
 "res://Components/": "pink",
 "res://Logik/": "blue",
+"res://Resources/": "teal",
 "res://Szenen/": "red",
 "res://leo/": "purple"
 }

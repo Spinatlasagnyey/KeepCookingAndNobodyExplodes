@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3 uid="uid://cf7vq6i6515e0"]
+
+[ext_resource type="Script" uid="uid://vnh8i3fyp2ny" path="res://Logik/DialogueManager/dialogue_node.gd" id="1_05ccf"]
+[ext_resource type="Script" uid="uid://bdkjmj1l0link" path="res://Logik/DialogueManager/dialogue_answer.gd" id="2_03xv4"]
+[ext_resource type="Script" uid="uid://ba4v5gvvu0cmi" path="res://Logik/DialogueManager/dialogue_resource.gd" id="2_yjcjn"]
+
+[sub_resource type="Resource" id="Resource_pnde1"]
+script = ExtResource("1_05ccf")
+speaker_name = "Kenny"
+text = "Maydey, mayday, please I need help, I crashed on a small island ... again"
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_yjcjn"]
+script = ExtResource("1_05ccf")
+speaker_name = "Kenny"
+text = "Mayday, mayday, please hel-"
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_4esj2"]
+script = ExtResource("1_05ccf")
+text = "Hello!!!! Hello, can you hear me???"
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_7xlyr"]
+script = ExtResource("1_05ccf")
+speaker_name = "Kenny"
+text = "Hello! Hello! I can hear you!!"
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_w1tuj"]
+script = ExtResource("1_05ccf")
+text = "HELLO??? "
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_03xv4"]
+script = ExtResource("1_05ccf")
+text = "I CAN HEAR YOU YES"
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_41fqy"]
+script = ExtResource("1_05ccf")
+text = "Oh. There are my head phones!"
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_y60rt"]
+script = ExtResource("1_05ccf")
+speaker_name = "Kenny"
+text = "...can you help me? I crashed with my plane on a lost island, can you send someone to rescue me?"
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_alcoo"]
+script = ExtResource("1_05ccf")
+text = "Yes yes I will *noise*"
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_034sm"]
+script = ExtResource("1_05ccf")
+speaker_name = "Kenny"
+text = "PiIIEEEPPP"
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_ma86u"]
+script = ExtResource("1_05ccf")
+speaker_name = "Kenny"
+text = "PIEEP PIEP piep ... PIIIEEEPPPP"
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_12vk5"]
+script = ExtResource("1_05ccf")
+text = "Damn I'm hungry, lets find me something to eat!"
+is_end = true
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[resource]
+script = ExtResource("2_yjcjn")
+nodes = Dictionary[int, ExtResource("1_05ccf")]({
+0: SubResource("Resource_pnde1"),
+1: SubResource("Resource_yjcjn"),
+2: SubResource("Resource_4esj2"),
+3: SubResource("Resource_7xlyr"),
+4: SubResource("Resource_w1tuj"),
+5: SubResource("Resource_03xv4"),
+6: SubResource("Resource_41fqy"),
+7: SubResource("Resource_y60rt"),
+8: SubResource("Resource_alcoo"),
+9: SubResource("Resource_034sm"),
+10: SubResource("Resource_ma86u"),
+11: SubResource("Resource_12vk5")
+})
+metadata/_custom_type_script = "uid://ba4v5gvvu0cmi"
