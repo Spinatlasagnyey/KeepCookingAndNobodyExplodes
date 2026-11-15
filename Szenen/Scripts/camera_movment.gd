@@ -9,7 +9,7 @@ var turn_duration: float = 0.3
 @export var cookingUI: Node
 @export var rulebook: Rulebook
 
-var directions := ["cooking", "talking", "looking", "reading"]
+var directions := ["talking", "looking", "reading", "cooking"]
 var current_direction := 0
 
 func _ready() -> void:
@@ -25,10 +25,10 @@ func _process(delta: float) -> void:
 			cookingUI.visible = false
 		if directions[current_direction] == "reading":
 			rulebook.visible = false
-		if current_direction == directions.size()-1:
-			current_direction = 0
+		if current_direction == 0:
+			current_direction = directions.size()-1
 		else:
-			current_direction += 1
+			current_direction -= 1
 
 	elif Input.is_action_just_released("rotate_right"):
 		target_rotation_y -= deg_to_rad(90)
@@ -38,14 +38,13 @@ func _process(delta: float) -> void:
 			cookingUI.visible = false
 		if directions[current_direction] == "reading":
 			rulebook.visible = false
-		if current_direction == 0:
-			current_direction = directions.size()-1
+		if current_direction == directions.size()-1:
+			current_direction = 0
 		else:
-			current_direction -= 1
+			current_direction += 1
 
 
 func smooth_rotate() -> void:
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	tween.tween_property(camera, "rotation:y", target_rotation_y, turn_duration)
-	

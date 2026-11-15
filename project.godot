@@ -41,6 +41,7 @@ folder_colors={
 
 audioStreamPlayerRadio=""
 dialogue_manager=""
+canvas_layer=""
 
 [input]
 
