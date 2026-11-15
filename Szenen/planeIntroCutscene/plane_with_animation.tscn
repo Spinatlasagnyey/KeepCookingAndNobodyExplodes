@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cmbbnaw64fdy3"]
+
+[ext_resource type="PackedScene" uid="uid://da6mu32rvjm47" path="res://Assets/3D-Objects/Plane/PlaneWithAnimation.glb" id="1_8uiun"]
+
+[node name="PlaneWithAnimation" unique_id=936237104 instance=ExtResource("1_8uiun")]
+
+[node name="Skeleton3D" parent="PlaneArmature" parent_id_path=PackedInt32Array(986513580) index="0" unique_id=81887623]
+bones/1/rotation = Quaternion(-1.0887469e-08, -4.2497607e-08, -0.7071068, 0.7071068)

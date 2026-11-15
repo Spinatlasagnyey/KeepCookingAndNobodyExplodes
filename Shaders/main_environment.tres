@@ -51,6 +51,7 @@ sky_material = SubResource("ShaderMaterial_qml1g")
 
 [resource]
 background_mode = 2
+background_energy_multiplier = 0.92
 sky = SubResource("Sky_jsxv2")
 glow_enabled = true
 glow_levels/1 = 2.0
