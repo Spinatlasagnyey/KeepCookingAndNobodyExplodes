@@ -8,9 +8,9 @@ extends Rule
 
 func get_description() -> String:
 	if merkmal1 == null or merkmal2 == null:
-		return "This rules needs a feature."
+		return "This rule needs two features."
 
-	return "Do not cook %s and %s together." % [
+	return "[center][b][font_size=36]Do not cook together[/font_size][/b]\n%s\n[font_size=42]+[/font_size]\n%s[/center]" % [
 		merkmal_als_bild(merkmal1),
 		merkmal_als_bild(merkmal2)
 	]

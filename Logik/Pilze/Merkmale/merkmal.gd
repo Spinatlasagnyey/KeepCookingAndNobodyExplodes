@@ -8,4 +8,4 @@ func merkmal_als_bild() -> String:
 	if texture == null:
 		return part_name
 
-	return "[img height=48]%s[/img]" % texture.resource_path
+	return "[img height=256]%s[/img]" % texture.resource_path
