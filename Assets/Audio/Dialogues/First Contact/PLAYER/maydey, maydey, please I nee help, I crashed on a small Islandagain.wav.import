@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dg27v5xd81obh"
+path="res://.godot/imported/maydey, maydey, please I nee help, I crashed on a small Islandagain.wav-dbe251245cc45f443c3ee17f10826e86.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Dialogues/First Contact/PLAYER/maydey, maydey, please I nee help, I crashed on a small Islandagain.wav"
+dest_files=["res://.godot/imported/maydey, maydey, please I nee help, I crashed on a small Islandagain.wav-dbe251245cc45f443c3ee17f10826e86.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

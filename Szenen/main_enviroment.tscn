@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://yu1xd0ob2x1w" path="res://Components/Bonfire/bonfire.tscn" id="15_5vi8i"]
 [ext_resource type="Script" uid="uid://c4obk7ddytvqf" path="res://Szenen/Scripts/day_night_cycle.gd" id="16_evutm"]
 [ext_resource type="Environment" uid="uid://cbtln38i4wf0d" path="res://Shaders/main_environment.tres" id="16_krsln"]
+[ext_resource type="AudioStream" uid="uid://2ktmo8p225ft" path="res://Assets/Audio/Soundtrack/TRACK2LINUS TRUPPE.wav" id="19_5vi8i"]
 [ext_resource type="Script" uid="uid://bhlith4q7hjup" path="res://Components/Cooking/pot_cube.gd" id="19_vhro2"]
 [ext_resource type="AudioStream" uid="uid://dtd28wk3wvwyk" path="res://Assets/Audio/SFX/2LAGERFEUERSFX.wav" id="20_vhro2"]
 
@@ -140,12 +141,17 @@ environment = ExtResource("16_krsln")
 
 [node name="MUSICSFX" type="Node3D" parent="." unique_id=1023701968]
 
+[node name="MUSIC" type="AudioStreamPlayer3D" parent="MUSICSFX" unique_id=463174158]
+stream = ExtResource("19_5vi8i")
+autoplay = true
+
 [node name="WIND" type="AudioStreamPlayer3D" parent="MUSICSFX" unique_id=74045594]
 stream = ExtResource("10_js2be")
 autoplay = true
 
 [node name="FIREPLACE" type="AudioStreamPlayer3D" parent="MUSICSFX" unique_id=269281972]
 stream = ExtResource("20_vhro2")
+volume_db = -10.0
 autoplay = true
 
 [connection signal="mouse_entered" from="PotCube" to="PotCube" method="_on_mouse_entered"]
