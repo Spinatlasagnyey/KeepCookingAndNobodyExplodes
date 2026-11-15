@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://dmy80vcehy38q"]
 
 [ext_resource type="Script" uid="uid://xvhj7fc7wlnb" path="res://leo/scripts/ui.gd" id="1_3a2tp"]
+[ext_resource type="Texture2D" uid="uid://sllijvq4odad" path="res://Assets/Dialogue/static_talking.png" id="2_tgqe0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twmcf"]
+bg_color = Color(0, 0, 0, 0.6784314)
 
 [node name="Ui" type="Control" unique_id=2109838708]
 layout_mode = 3
@@ -47,20 +51,6 @@ max_value = 5.0
 step = 1.0
 show_percentage = false
 
-[node name="GameOverLabel" type="Label" parent="." unique_id=1881356778]
-unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_left = 2.0
-offset_top = 161.0
-offset_right = 1149.0
-offset_bottom = 484.0
-theme_override_font_sizes/font_size = 20
-text = "YOU ARE DEAD
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Day" type="Label" parent="." unique_id=893905026]
 unique_name_in_owner = true
 layout_mode = 1
@@ -87,3 +77,74 @@ offset_right = -81.0
 offset_bottom = 36.0
 grow_horizontal = 0
 text = "Unknown Island -"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1513769596]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverPanel" type="Panel" parent="." unique_id=1513359222]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_twmcf")
+
+[node name="RestartButton" type="TextureButton" parent="GameOverPanel" unique_id=444899055]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39843756
+anchor_top = 0.42129636
+anchor_right = 1.3984375
+anchor_bottom = 1.4212962
+offset_left = 13.999908
+offset_top = 22.99997
+offset_right = 116.0
+offset_bottom = 185.00006
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.18, 0.18)
+texture_normal = ExtResource("2_tgqe0")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="GameOverPanel" unique_id=202776129]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 493.0
+offset_top = 311.0
+offset_right = -469.0
+offset_bottom = -234.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "RESTART"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="GameOverPanel" unique_id=1881356778]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -104.0
+offset_bottom = -44.99994
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "YOU ARE DEAD
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_up" from="GameOverPanel/RestartButton" to="." method="_on_restart_button_button_up"]

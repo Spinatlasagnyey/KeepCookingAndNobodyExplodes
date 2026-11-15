@@ -129,3 +129,21 @@ func get_day_progress() -> float:
 		elapsed += day_timer.wait_time - day_timer.time_left
 
 	return clampf(elapsed / float(SECONDS_PER_DAY), 0.0, 1.0)
+	
+func reset():
+	time_passed = 0.0
+	current_day = 1
+	current_fullness = 0.0
+	current_poison = 0.0
+	working_dialogue_schedule.clear()
+	working_dialogue_schedule = dialogue_schedule.duplicate()
+	is_game_over = false
+	start_day_timer()
+	
+	# erster Tag
+	await get_tree().process_frame
+	new_day.emit(current_day, SECONDS_PER_DAY)
+	time_passed_changed.emit(time_passed)
+	hunger_value_changed.emit(current_fullness)
+	poison_value_changed.emit(current_poison)
+	

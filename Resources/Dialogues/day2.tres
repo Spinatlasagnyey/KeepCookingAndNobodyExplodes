@@ -1,0 +1,98 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3 uid="uid://bpsibakayvvlm"]
+
+[ext_resource type="Script" uid="uid://vnh8i3fyp2ny" path="res://Logik/DialogueManager/dialogue_node.gd" id="1_i057i"]
+[ext_resource type="Script" uid="uid://bdkjmj1l0link" path="res://Logik/DialogueManager/dialogue_answer.gd" id="2_1qxng"]
+[ext_resource type="Script" uid="uid://ba4v5gvvu0cmi" path="res://Logik/DialogueManager/dialogue_resource.gd" id="2_3umqv"]
+[ext_resource type="AudioStream" uid="uid://ol7pyiyqwe4w" path="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/hello incoming, incoming hello, somebody there.wav" id="3_8o8q8"]
+[ext_resource type="AudioStream" uid="uid://d38jge4n57cui" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/FIRST_AND_SECOND_CONTACT/Playeryes hello, Im still alive, had to make a bunch of soups to stay alive - Kopie.wav" id="4_i3tv0"]
+[ext_resource type="AudioStream" uid="uid://b4xc2bte1vpbh" path="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/happy to hear that you are still up and running.wav" id="5_0d3l7"]
+[ext_resource type="AudioStream" uid="uid://vvkefdfstt8l" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/FIRST_AND_SECOND_CONTACT/yeah not really, my legs are not working as they used to - Kopie.wav" id="6_ylduu"]
+[ext_resource type="AudioStream" uid="uid://bktqyuoa6fm4n" path="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/ohhhhh akward silence sorry I didnt know.wav" id="7_g6gc0"]
+[ext_resource type="AudioStream" uid="uid://172feheon7l6" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/FIRST_AND_SECOND_CONTACT/oh its alright, luckly everything is close by - Kopie.wav" id="8_ppkud"]
+[ext_resource type="AudioStream" uid="uid://csvr340yyw2ig" path="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/oh good, good .... hey listen we already located your location and we send a team to get you.wav" id="9_mthy4"]
+[ext_resource type="AudioStream" uid="uid://dew0arlj8hfcq" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/FIRST_AND_SECOND_CONTACT/oh hail marie, thank you, I really hope to see my cat again - Kopie.wav" id="10_7evkx"]
+[ext_resource type="AudioStream" uid="uid://7641sgxb8if1" path="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/until then try to stay alive.wav" id="11_w825e"]
+
+[sub_resource type="Resource" id="Resource_1qxng"]
+script = ExtResource("1_i057i")
+text = "hello incoming, incoming hello, somebody there?"
+audio = ExtResource("3_8o8q8")
+next_id = 1
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_dr1vn"]
+script = ExtResource("1_i057i")
+speaker_name = "Kenny"
+text = "yes hello, I'm still alive, had to make a bunch of soups to stay alive!"
+audio = ExtResource("4_i3tv0")
+next_id = 2
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_771ic"]
+script = ExtResource("1_i057i")
+text = "happy to hear that you are still up and running!"
+audio = ExtResource("5_0d3l7")
+next_id = 3
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_13qqb"]
+script = ExtResource("1_i057i")
+speaker_name = "Kenny"
+text = "yeah not really, my legs are not working as they used to"
+audio = ExtResource("6_ylduu")
+next_id = 4
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_y4xmj"]
+script = ExtResource("1_i057i")
+text = "ohhhhh .... sorry I didnt know..."
+audio = ExtResource("7_g6gc0")
+next_id = 5
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_00mcg"]
+script = ExtResource("1_i057i")
+speaker_name = "Kenny"
+text = "oh its alright, luckily everything is close by"
+audio = ExtResource("8_ppkud")
+next_id = 6
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_x6uf8"]
+script = ExtResource("1_i057i")
+text = "oh good, good .... hey listen we already located your location and we send a team to get you!"
+audio = ExtResource("9_mthy4")
+next_id = 7
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_vgfyd"]
+script = ExtResource("1_i057i")
+speaker_name = "Kenny"
+text = "oh hail marie, thank you, I really hope to see my cat again"
+audio = ExtResource("10_7evkx")
+next_id = 8
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_8o8q8"]
+script = ExtResource("1_i057i")
+text = "until then try to stay alive!
+"
+audio = ExtResource("11_w825e")
+is_end = true
+end_callable = "_on_dialogue_finished"
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[resource]
+script = ExtResource("2_3umqv")
+nodes = Dictionary[int, ExtResource("1_i057i")]({
+0: SubResource("Resource_1qxng"),
+1: SubResource("Resource_dr1vn"),
+2: SubResource("Resource_771ic"),
+3: SubResource("Resource_13qqb"),
+4: SubResource("Resource_y4xmj"),
+5: SubResource("Resource_00mcg"),
+6: SubResource("Resource_x6uf8"),
+7: SubResource("Resource_vgfyd"),
+8: SubResource("Resource_8o8q8")
+})
+metadata/_custom_type_script = "uid://ba4v5gvvu0cmi"

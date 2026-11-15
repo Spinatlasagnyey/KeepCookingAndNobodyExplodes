@@ -5,6 +5,7 @@ class_name UI
 @onready var hunger_bar: ProgressBar = %HungerProgressBar
 @onready var poison_bar: ProgressBar = %PoisonProgressBar
 @onready var game_over_label : Label = %GameOverLabel
+@onready var gamer_over_panel : Panel = %GameOverPanel
 @onready var day_label : Label = %Day
 
 var day_time_sec : float
@@ -18,7 +19,7 @@ func _ready() -> void:
 	EventManager.time_passed_changed.connect(_on_time_passed_changed)
 	
 func toggle_game_over_vis():
-	game_over_label.visible = not game_over_label.visible
+	game_over_label.visible = not gamer_over_panel.visible
 
 func _on_hunger_value_changed(value : float):
 	hunger_bar.value = value
@@ -39,4 +40,10 @@ func _on_new_day(dayInt: int, new_day_time_sec : float):
 	day_time_sec = new_day_time_sec
 	time_bar.max_value = day_time_sec
 	time_bar.value = time_bar.max_value
+	
+func _on_restart_button_button_up() -> void:
+	EventManager.reset()
+	get_tree().reload_current_scene()
+	#TODO reset globals
+	
 	
