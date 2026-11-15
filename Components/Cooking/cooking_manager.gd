@@ -40,6 +40,7 @@ func pick_up_mushroom():
 func cook():
 	if rulebook:
 		print(soup.size())
+		EventManager.add_fullness(soup.size())
 		var poison = rulebook.check_poison_outcome(soup)
 		EventManager.add_poison(poison)
 		soup.clear()
