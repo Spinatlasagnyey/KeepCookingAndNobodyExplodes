@@ -5,14 +5,21 @@
 [ext_resource type="Script" uid="uid://ba4v5gvvu0cmi" path="res://Logik/DialogueManager/dialogue_resource.gd" id="2_yjcjn"]
 [ext_resource type="AudioStream" uid="uid://djmtg05b7lx5k" path="res://Assets/Audio/SFX/StörgeräuschWalkyTalky.wav" id="3_0d3ja"]
 [ext_resource type="AudioStream" uid="uid://da868y756a2cm" path="res://Assets/Audio/Dialogues/First Contact/HARALD/HARALD-HELLO_CAN_YOU_HEAR_ME.wav" id="3_7xlyr"]
+[ext_resource type="AudioStream" uid="uid://dygjyf20rvieh" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/maydey, maydey please he.wav" id="3_034sm"]
+[ext_resource type="AudioStream" uid="uid://dg27v5xd81obh" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/maydey, maydey, please I nee help, I crashed on a small Islandagain.wav" id="3_ma86u"]
 [ext_resource type="AudioStream" uid="uid://3u0ucbgd8rpr" path="res://Assets/Audio/Dialogues/First Contact/HARALD/HARALD-HELLO.wav" id="4_w1tuj"]
+[ext_resource type="AudioStream" uid="uid://d1nl06rfxfedl" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/HELLO HELLO I CAN HEAR YOU YES.wav" id="5_ma86u"]
 [ext_resource type="AudioStream" uid="uid://b3hpyrnbggblq" path="res://Assets/Audio/Dialogues/First Contact/HARALD/HARALD-oh there are my head phones.wav" id="5_pnde1"]
 [ext_resource type="AudioStream" uid="uid://c8quvitq48h4d" path="res://Assets/Audio/Dialogues/First Contact/HARALD/HARALD-YES_YES_I_WILL.wav" id="6_4esj2"]
+[ext_resource type="AudioStream" uid="uid://bek0li7ccstew" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/I CAN HEAR YOU YES.wav" id="7_12vk5"]
+[ext_resource type="AudioStream" uid="uid://dmldak6it7665" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/CAN YOU HELP ME I CRASHED MY AIRPLANE USW.wav" id="9_bwpln"]
+[ext_resource type="AudioStream" uid="uid://6u5am8df2mdw" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/DAMN IAM HUNGRY LETS FIND ME SOMETHING TO EAT.wav" id="12_0ilfw"]
 
 [sub_resource type="Resource" id="Resource_pnde1"]
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "Mayday, mayday, please I need help, I crashed on a small island ... again"
+audio = ExtResource("3_ma86u")
 next_id = 1
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
@@ -20,6 +27,7 @@ metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "Mayday, mayday, please hel-"
+audio = ExtResource("3_034sm")
 next_id = 2
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
@@ -34,6 +42,7 @@ metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "Hello! Hello! I can hear you!!"
+audio = ExtResource("5_ma86u")
 next_id = 4
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
@@ -48,6 +57,7 @@ metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "I CAN HEAR YOU YES"
+audio = ExtResource("7_12vk5")
 next_id = 6
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
@@ -62,6 +72,7 @@ metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "...can you help me? I crashed with my plane on a lost island, can you send someone to rescue me?"
+audio = ExtResource("9_bwpln")
 next_id = 8
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
@@ -92,6 +103,7 @@ metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "Damn I'm hungry, lets find me something to eat!"
+audio = ExtResource("12_0ilfw")
 is_end = true
 end_callable = "_on_dialogue_finished"
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"

@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var audio_player: AudioStreamPlayer3D = %AudioStreamPlayer3DRadio
+@onready var audio_player_noise: AudioStreamPlayer3D = %AudioStreamPlayerStaticNoise
 @onready var radio_light : MeshInstance3D = %RadioLight
 @onready var radio_light_timer : Timer = %RadioLightTimer
 
@@ -25,6 +26,7 @@ func play_dialogue() -> bool:
 	
 	radio_light.visible = true
 	radio_light_timer.stop()
+	audio_player_noise.play()
 	
 	dialogue_system.start_dialogue(self, dialogue) 
 	return true
@@ -47,6 +49,8 @@ func _on_static_body_3d_input_event(_camera: Node, event: InputEvent, _event_pos
 func _on_dialogue_finished():
 	dialogue_queue.remove_at(0)
 	radio_light.visible = false
+	await get_tree().create_timer(1.5).timeout
+	audio_player_noise.stop()
 
 func toggle_radio_light_vis():
 	radio_light.visible = not radio_light.visible
