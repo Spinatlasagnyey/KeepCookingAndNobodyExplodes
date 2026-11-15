@@ -17,6 +17,7 @@ script = ExtResource("1_3a2tp")
 
 [node name="TimerProgressBar" type="ProgressBar" parent="." unique_id=947587432]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -31,6 +32,7 @@ show_percentage = false
 
 [node name="PoisonProgressBar" type="ProgressBar" parent="." unique_id=653448652]
 unique_name_in_owner = true
+visible = false
 modulate = Color(0, 1, 0.48333335, 1)
 layout_mode = 0
 offset_left = 5.0
@@ -43,10 +45,10 @@ value = 43.95
 unique_name_in_owner = true
 modulate = Color(0.76919943, 0.30236173, 0.22184601, 1)
 layout_mode = 0
-offset_left = 5.0
-offset_top = 47.0
-offset_right = 205.0
-offset_bottom = 74.0
+offset_left = 938.0
+offset_top = 39.0
+offset_right = 1138.0
+offset_bottom = 56.0
 max_value = 5.0
 step = 1.0
 show_percentage = false
@@ -77,14 +79,6 @@ offset_right = -81.0
 offset_bottom = 36.0
 grow_horizontal = 0
 text = "Unknown Island -"
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1513769596]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="GameOverPanel" type="Panel" parent="." unique_id=1513359222]
 unique_name_in_owner = true

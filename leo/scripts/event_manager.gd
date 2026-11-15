@@ -11,8 +11,8 @@ const SECONDS_PER_DAY = 180
 const RESCUE_DAY = 7
 
 const STARTING_FULLNESS = 0
-const MAX_FULLNESS = 5
-const HUNGER_PER_DAY = 3
+const MAX_FULLNESS = 15
+const HUNGER_PER_DAY = 10
 
 const STARTING_POISON = 0
 const MAX_POISON = 20 
