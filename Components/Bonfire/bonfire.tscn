@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cp7kutsvoblvk" path="res://Assets/3D-Objects/Bonfire.fbx" id="1_t7ogg"]
 
 [sub_resource type="Gradient" id="Gradient_t7ogg"]
-offsets = PackedFloat32Array(0, 0.016483517, 0.34615386, 0.6208791, 0.87362635, 0.99450547)
-colors = PackedColorArray(1, 0, 0, 1, 0.9584755, 0.01624366, 0.016243657, 1, 1, 0.61960787, 0, 1, 0.70980394, 0.7254902, 0.11372549, 1, 0.28118682, 0.28118688, 0.28118682, 1, 0.31673253, 0.26728204, 0.26728198, 1)
+offsets = PackedFloat32Array(0, 0.016483517, 0.46703297, 0.87362635, 0.99450547)
+colors = PackedColorArray(1, 0, 0, 1, 0.9584755, 0.01624366, 0.016243657, 1, 1, 0.61960787, 0, 1, 0.28118682, 0.28118688, 0.28118682, 1, 0.31673253, 0.26728204, 0.26728198, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_t6d8x"]
 gradient = SubResource("Gradient_t7ogg")

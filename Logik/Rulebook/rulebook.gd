@@ -2,6 +2,8 @@ class_name Rulebook
 extends Node
 
 @export var rules: Array[Rule]
+@export var rules_added_later: Array[Rule]
+var next_rule_index = 0
 @onready var entries: VBoxContainer = $CanvasLayer/BookPanel/ScrollContainer/Entries
 
 func _ready() -> void:
@@ -10,6 +12,7 @@ func _ready() -> void:
 	#var mushes: Array[Mushroom] = [mush1]
 	#check_poison_outcome(mushes)
 	show_rules()
+	EventManager.new_day.connect(add_new_rule)
 
 func check_poison_outcome(mushrooms: Array[Mushroom]) -> int:
 	var sum: int = 0
@@ -30,3 +33,9 @@ func show_rules() -> void:
 		description_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		description_label.text = rule.get_description()
 		entries.add_child(description_label)
+
+func add_new_rule():
+	rules.append(rules_added_later[next_rule_index])
+	next_rule_index += 1
+	if next_rule_index == rules_added_later.size():
+		next_rule_index = 0
