@@ -9,8 +9,6 @@
 [ext_resource type="Resource" uid="uid://cf7vq6i6515e0" path="res://Resources/Dialogues/first_contact.tres" id="5_o5mgg"]
 [ext_resource type="PackedScene" uid="uid://dmy80vcehy38q" path="res://leo/scenes/ui.tscn" id="6_anygr"]
 [ext_resource type="PackedScene" uid="uid://d85w6qfcrrc1" path="res://Components/Cooking/cooking_ui.tscn" id="6_js2be"]
-[ext_resource type="Script" uid="uid://dsskgqav1tf1e" path="res://Szenen/Scripts/radio_cube.gd" id="7_anygr"]
-[ext_resource type="AudioStream" uid="uid://dyx4va0n6d8bp" path="res://Assets/Audio/SFX/WalkyTalkySFX.wav" id="9_unhmu"]
 [ext_resource type="AudioStream" uid="uid://bhkrmswbc2f4h" path="res://Assets/Audio/SFX/SFX_WIND_NEW.wav" id="10_js2be"]
 [ext_resource type="PackedScene" uid="uid://cp7kutsvoblvk" path="res://Assets/3D-Objects/Bonfire.fbx" id="11_bbouh"]
 [ext_resource type="Script" uid="uid://scjqyb0xmqpf" path="res://Components/Cooking/cooking_cube.gd" id="11_dhkmp"]
@@ -18,37 +16,20 @@
 [ext_resource type="Script" uid="uid://dro8p4d8ym4es" path="res://Components/Book/book_cube.gd" id="13_bbouh"]
 [ext_resource type="PackedScene" uid="uid://lyvgh238cpen" path="res://Assets/3D-Objects/suitcase_formushroomstash.fbx" id="13_rk8eg"]
 [ext_resource type="PackedScene" uid="uid://yu1xd0ob2x1w" path="res://Components/Bonfire/bonfire.tscn" id="15_5vi8i"]
+[ext_resource type="Script" uid="uid://c4obk7ddytvqf" path="res://Szenen/Scripts/day_night_cycle.gd" id="16_evutm"]
+[ext_resource type="Environment" uid="uid://cbtln38i4wf0d" path="res://Shaders/main_environment.tres" id="16_krsln"]
 [ext_resource type="Script" uid="uid://bhlith4q7hjup" path="res://Components/Cooking/pot_cube.gd" id="19_vhro2"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bbouh"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_ntwfu"]
-sky_material = SubResource("ProceduralSkyMaterial_bbouh")
-
-[sub_resource type="Environment" id="Environment_rk8eg"]
-background_mode = 2
-sky = SubResource("Sky_ntwfu")
-glow_enabled = true
+[sub_resource type="PlaneMesh" id="PlaneMesh_060g2"]
+size = Vector2(100, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0xql7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xql7"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_060g2"]
-size = Vector2(100, 100)
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_r7k0y"]
 
 [node name="MainEnviroment" type="Node3D" unique_id=1716867431]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=596399706]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=64381367]
-environment = SubResource("Environment_rk8eg")
 
 [node name="CameraRig" type="Node3D" parent="." unique_id=456108787 node_paths=PackedStringArray("cookingUI", "rulebook")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0807045, 0)
@@ -93,21 +74,6 @@ mouse_filter = 2
 text = "COOK"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="RadioCube" type="StaticBody3D" parent="." unique_id=916767358]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0908935, 0.50154567, 0)
-visible = false
-script = ExtResource("7_anygr")
-alertSound = ExtResource("9_unhmu")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RadioCube" unique_id=732477871]
-mesh = SubResource("BoxMesh_0xql7")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RadioCube" unique_id=601102096]
-shape = SubResource("BoxShape3D_0xql7")
-
-[node name="AudioStreamPlayer3DRadio" type="AudioStreamPlayer3D" parent="RadioCube" unique_id=1911349520 groups=["audioStreamPlayerRadio"]]
-max_db = 0.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2143861798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5751717, 0, -0.6599126)
@@ -166,6 +132,16 @@ mesh = SubResource("BoxMesh_0xql7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BookCube" unique_id=1853265325]
 shape = SubResource("BoxShape3D_0xql7")
+
+[node name="DayNightCycle" type="Node3D" parent="." unique_id=2105697141]
+script = ExtResource("16_evutm")
+
+[node name="Sun" type="DirectionalLight3D" parent="DayNightCycle" unique_id=596399706]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="DayNightCycle" unique_id=64381367]
+environment = ExtResource("16_krsln")
 
 [connection signal="mouse_entered" from="PotCube" to="PotCube" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="PotCube" to="PotCube" method="_on_mouse_exited"]
