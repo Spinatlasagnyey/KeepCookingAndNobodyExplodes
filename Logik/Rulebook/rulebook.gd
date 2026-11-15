@@ -34,7 +34,7 @@ func show_rules() -> void:
 		description_label.text = rule.get_description()
 		entries.add_child(description_label)
 
-func add_new_rule():
+func add_new_rule(a, b):
 	rules.append(rules_added_later[next_rule_index])
 	next_rule_index += 1
 	if next_rule_index == rules_added_later.size():
