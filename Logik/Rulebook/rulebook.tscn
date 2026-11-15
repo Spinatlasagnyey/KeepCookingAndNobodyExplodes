@@ -1,30 +1,88 @@
 [gd_scene format=3 uid="uid://ccog6rqs31kjj"]
 
 [ext_resource type="Script" uid="uid://cb326iqmmxfyu" path="res://Logik/Rulebook/rulebook.gd" id="1_kmrpa"]
-[ext_resource type="Resource" uid="uid://borkdptxp0t2d" path="res://Logik/Pilze/Merkmale/Rescourcen/Cap1.tres" id="4_mrla5"]
-[ext_resource type="Resource" uid="uid://ey8eplwtfcat" path="res://Logik/Pilze/Merkmale/Rescourcen/Cap5.tres" id="4_ux58w"]
+[ext_resource type="Resource" uid="uid://bcbqs4l8vvl52" path="res://Logik/Pilze/Merkmale/Rescourcen/Cap2.tres" id="3_seyq1"]
+[ext_resource type="Resource" uid="uid://dnwhy5iv0crrc" path="res://Logik/Pilze/Merkmale/Rescourcen/Cap6.tres" id="4_bhj3i"]
 [ext_resource type="Script" uid="uid://c7an6qtn8ccvs" path="res://Logik/Rulebook/combination_rule.gd" id="5_mrla5"]
 [ext_resource type="Script" uid="uid://6hommax7p67w" path="res://Logik/Rulebook/rule.gd" id="5_ux58w"]
+[ext_resource type="Resource" uid="uid://dl1eepv2llfur" path="res://Logik/Pilze/Merkmale/Rescourcen/Stem1.tres" id="6_h7s05"]
 [ext_resource type="Resource" uid="uid://cxlpjypriii8h" path="res://Logik/Pilze/Merkmale/Rescourcen/Mask1.tres" id="6_vnha0"]
+[ext_resource type="Resource" uid="uid://dvngf2r63bjng" path="res://Logik/Pilze/Merkmale/Rescourcen/Stem4.tres" id="7_r34j8"]
 [ext_resource type="Script" uid="uid://sll6xu8f82kn" path="res://Logik/Rulebook/preparation_rule.gd" id="7_vnha0"]
+[ext_resource type="Resource" uid="uid://b6fvkfygyvxp" path="res://Logik/Pilze/Merkmale/Rescourcen/Mask2.tres" id="8_hn0ep"]
+[ext_resource type="Resource" uid="uid://b3sruc501nun2" path="res://Logik/Pilze/Merkmale/Rescourcen/Mask3.tres" id="9_h0pu5"]
+[ext_resource type="Resource" uid="uid://cdhnu3icbf8ii" path="res://Logik/Pilze/Merkmale/Rescourcen/Cap3.tres" id="10_jwd5n"]
+[ext_resource type="Resource" uid="uid://byfh5kcapbbhq" path="res://Logik/Pilze/Merkmale/Rescourcen/Stem2.tres" id="11_lv18v"]
+[ext_resource type="Resource" uid="uid://b185bh76mr7uo" path="res://Logik/Pilze/Merkmale/Rescourcen/Cap4.tres" id="12_08a57"]
 
-[sub_resource type="Resource" id="Resource_bbouh"]
+[sub_resource type="Resource" id="Resource_2ih82"]
 script = ExtResource("5_mrla5")
-merkmal1 = ExtResource("4_mrla5")
-merkmal2 = ExtResource("4_ux58w")
+merkmal1 = ExtResource("3_seyq1")
+merkmal2 = ExtResource("4_bhj3i")
 metadata/_custom_type_script = "uid://c7an6qtn8ccvs"
 
-[sub_resource type="Resource" id="Resource_ntwfu"]
+[sub_resource type="Resource" id="Resource_4ws36"]
+script = ExtResource("5_mrla5")
+merkmal1 = ExtResource("6_h7s05")
+merkmal2 = ExtResource("7_r34j8")
+metadata/_custom_type_script = "uid://c7an6qtn8ccvs"
+
+[sub_resource type="Resource" id="Resource_u2f1o"]
+script = ExtResource("5_mrla5")
+merkmal1 = ExtResource("8_hn0ep")
+merkmal2 = ExtResource("9_h0pu5")
+metadata/_custom_type_script = "uid://c7an6qtn8ccvs"
+
+[sub_resource type="Resource" id="Resource_v3sw6"]
+script = ExtResource("5_mrla5")
+merkmal1 = ExtResource("10_jwd5n")
+merkmal2 = ExtResource("11_lv18v")
+metadata/_custom_type_script = "uid://c7an6qtn8ccvs"
+
+[sub_resource type="Resource" id="Resource_jjdh4"]
+script = ExtResource("5_mrla5")
+merkmal1 = ExtResource("12_08a57")
+merkmal2 = ExtResource("6_vnha0")
+metadata/_custom_type_script = "uid://c7an6qtn8ccvs"
+
+[sub_resource type="Resource" id="Resource_n6cff"]
 script = ExtResource("7_vnha0")
-merkmal = ExtResource("6_vnha0")
+merkmal = ExtResource("8_hn0ep")
+preparation_method = 2
+inversed = true
+metadata/_custom_type_script = "uid://sll6xu8f82kn"
+
+[sub_resource type="Resource" id="Resource_watwf"]
+script = ExtResource("7_vnha0")
+merkmal = ExtResource("9_h0pu5")
 preparation_method = 1
+metadata/_custom_type_script = "uid://sll6xu8f82kn"
+
+[sub_resource type="Resource" id="Resource_lrg2i"]
+script = ExtResource("7_vnha0")
+merkmal = ExtResource("10_jwd5n")
+preparation_method = 1
+metadata/_custom_type_script = "uid://sll6xu8f82kn"
+
+[sub_resource type="Resource" id="Resource_4skv4"]
+script = ExtResource("7_vnha0")
+merkmal = ExtResource("11_lv18v")
+preparation_method = 2
+inversed = true
+metadata/_custom_type_script = "uid://sll6xu8f82kn"
+
+[sub_resource type="Resource" id="Resource_h0imq"]
+script = ExtResource("7_vnha0")
+merkmal = ExtResource("4_bhj3i")
+preparation_method = 2
+inversed = true
 metadata/_custom_type_script = "uid://sll6xu8f82kn"
 
 [node name="Rulebook" type="Control" unique_id=1187103467 groups=["rulebook"]]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_kmrpa")
-rules = Array[ExtResource("5_ux58w")]([SubResource("Resource_bbouh"), SubResource("Resource_ntwfu")])
+rules = Array[ExtResource("5_ux58w")]([SubResource("Resource_2ih82"), SubResource("Resource_4ws36"), SubResource("Resource_u2f1o"), SubResource("Resource_v3sw6"), SubResource("Resource_jjdh4"), SubResource("Resource_n6cff"), SubResource("Resource_watwf"), SubResource("Resource_lrg2i"), SubResource("Resource_4skv4"), SubResource("Resource_h0imq")])
 
 [node name="CanvasLayer" type="Control" parent="." unique_id=90502209]
 anchors_preset = 0
