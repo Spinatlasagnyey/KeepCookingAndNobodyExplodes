@@ -15,7 +15,7 @@ const MAX_FULLNESS = 5
 const HUNGER_PER_DAY = 3
 
 const STARTING_POISON = 0
-const MAX_POISON = 100 
+const MAX_POISON = 20 
 const MINUS_POISON_PER_DAY = 20
 
 @onready var day_timer : Timer = %DayTimer

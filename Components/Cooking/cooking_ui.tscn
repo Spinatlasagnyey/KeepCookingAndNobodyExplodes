@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c423kfuqhdq37" path="res://Components/Cooking/cooking_manager.gd" id="1_7gnrb"]
 [ext_resource type="PackedScene" uid="uid://cmg7ivfpgcq3o" path="res://Components/Pilz/pilz.tscn" id="2_6llp0"]
+[ext_resource type="Texture2D" uid="uid://bnp7lhdr0yf25" path="res://Assets/UI/Button.png" id="3_j0w3u"]
 [ext_resource type="AudioStream" uid="uid://bedt0j10c6rrb" path="res://Assets/Audio/SFX/Knife.wav" id="3_u0a2p"]
 [ext_resource type="AudioStream" uid="uid://c7rgf4v5hq1xf" path="res://Assets/Audio/SFX/2Selection.wav" id="4_xpqwy"]
 [ext_resource type="AudioStream" uid="uid://bpgvcisxec5y5" path="res://Assets/Audio/SFX/squash.wav" id="5_faihs"]
@@ -23,53 +24,138 @@ layout_mode = 1
 offset_left = -3.0517578e-05
 offset_right = -6.1035156e-05
 
-[node name="TrashMushroom" type="Button" parent="." unique_id=771401031]
+[node name="TrashMushroom" type="TextureButton" parent="." unique_id=1083568329]
 layout_mode = 0
-offset_left = 1055.0
-offset_top = 586.0
-offset_right = 1107.0
-offset_bottom = 617.0
+offset_left = 963.0
+offset_top = 521.0
+offset_right = 2163.0
+offset_bottom = 1321.0
+scale = Vector2(0.145, 0.145)
+texture_normal = ExtResource("3_j0w3u")
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TrashMushroom" unique_id=1290952412]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 250
 text = "Trash"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="PutDownMushroom" type="Button" parent="." unique_id=368826198]
+[node name="PutDownMushroom" type="TextureButton" parent="." unique_id=260469683]
 layout_mode = 0
-offset_left = 45.0
-offset_top = 570.0
-offset_right = 127.0
-offset_bottom = 610.0
+offset_left = 23.000002
+offset_top = 525.0
+offset_right = 1223.0
+offset_bottom = 1325.0
+scale = Vector2(0.145, 0.145)
+texture_normal = ExtResource("3_j0w3u")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PutDownMushroom" unique_id=2085019994]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 140
 text = "Put down"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="UseMushroom" type="Button" parent="." unique_id=27410094]
+[node name="UseMushroom" type="TextureButton" parent="." unique_id=1454272514]
 layout_mode = 0
-offset_left = 534.0
-offset_top = 567.0
-offset_right = 618.0
-offset_bottom = 607.0
-text = "Put in Pot"
+offset_left = 480.0
+offset_top = 523.0
+offset_right = 1680.0
+offset_bottom = 1323.0
+scale = Vector2(0.145, 0.145)
+texture_normal = ExtResource("3_j0w3u")
 
-[node name="SquashMushroom" type="Button" parent="." unique_id=1610702239]
-layout_mode = 0
-offset_left = 1057.0
-offset_top = 408.0
-offset_right = 1112.0
-offset_bottom = 448.0
-text = "Sqash"
+[node name="RichTextLabel" type="RichTextLabel" parent="UseMushroom" unique_id=1823141913]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 154
+text = "Put in pot"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="CutMushroom" type="Button" parent="." unique_id=149340088]
+[node name="SquashMushroom" type="TextureButton" parent="." unique_id=175344062]
 layout_mode = 0
-offset_left = 1063.0
-offset_top = 356.0
-offset_right = 1103.0
-offset_bottom = 396.0
+offset_left = 966.0
+offset_top = 332.99997
+offset_right = 2166.0
+offset_bottom = 1133.0
+scale = Vector2(0.145, 0.145)
+texture_normal = ExtResource("3_j0w3u")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SquashMushroom" unique_id=83812790]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 193
+text = "Squash"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CutMushroom" type="TextureButton" parent="." unique_id=1496047939]
+layout_mode = 0
+offset_left = 966.0
+offset_top = 229.99998
+offset_right = 2166.0
+offset_bottom = 1030.0
+scale = Vector2(0.145, 0.145)
+texture_normal = ExtResource("3_j0w3u")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CutMushroom" unique_id=1410974906]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 250
 text = "Cut"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Cook" type="Button" parent="." unique_id=2111777499]
+[node name="Cook" type="TextureButton" parent="." unique_id=34599508]
 layout_mode = 0
-offset_left = 682.0
-offset_top = 570.0
-offset_right = 729.0
-offset_bottom = 601.0
+offset_left = 663.0
+offset_top = 525.0
+offset_right = 1863.0
+offset_bottom = 1325.0
+scale = Vector2(0.145, 0.145)
+texture_normal = ExtResource("3_j0w3u")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Cook" unique_id=419398696]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 250
 text = "Cook"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Audio" type="Node2D" parent="." unique_id=1324278025]
 

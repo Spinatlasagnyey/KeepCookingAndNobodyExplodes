@@ -13,7 +13,7 @@ metadata/_custom_type_script = "uid://b7wuildcvmwcb"
 
 [node name="EventManager" type="Node" unique_id=1803634714]
 script = ExtResource("1_66soh")
-dialogue_schedule = Array[Object]([SubResource("Resource_66soh")])
+dialogue_schedule = Array[ExtResource("3_1ot2l")]([SubResource("Resource_66soh")])
 
 [node name="DayTimer" type="Timer" parent="." unique_id=792998455]
 unique_name_in_owner = true
