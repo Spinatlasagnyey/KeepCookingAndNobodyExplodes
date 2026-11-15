@@ -7,7 +7,7 @@ signal game_over_signal(game_over_message : String)
 signal new_day(dayInt : int, seconds_per_day : float)
 signal dialogue_alert(dialogue : DialogueResource)
 
-const SECONDS_PER_DAY = 180
+const SECONDS_PER_DAY = 20
 const RESCUE_DAY = 7
 
 const STARTING_FULLNESS = 0
@@ -31,6 +31,7 @@ var current_poison
 var is_game_over = false
 
 func _ready() -> void:
+	get_tree().scene_changed.connect(_on_scene_changed)
 	working_dialogue_schedule = dialogue_schedule.duplicate()
 	
 	current_fullness = STARTING_FULLNESS
@@ -42,8 +43,6 @@ func _ready() -> void:
 	# erster Tag
 	new_day.emit(current_day, SECONDS_PER_DAY)
 	time_passed_changed.emit(time_passed)
-	
-	start_day_timer()
 	
 	
 func _physics_process(_delta: float) -> void:
@@ -147,3 +146,10 @@ func reset():
 	hunger_value_changed.emit(current_fullness)
 	poison_value_changed.emit(current_poison)
 	
+
+func _on_scene_changed() -> void:
+	print(is_game_over)
+	print(get_tree().current_scene.name)
+	print(day_timer.is_stopped)
+	if not is_game_over and get_tree().current_scene.name == "MainEnviroment" and day_timer.is_stopped():
+		start_day_timer()
