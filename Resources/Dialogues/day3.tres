@@ -1,0 +1,126 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3 uid="uid://dtatnkmyt5l1c"]
+
+[ext_resource type="Script" uid="uid://vnh8i3fyp2ny" path="res://Logik/DialogueManager/dialogue_node.gd" id="1_e2wfg"]
+[ext_resource type="Script" uid="uid://bdkjmj1l0link" path="res://Logik/DialogueManager/dialogue_answer.gd" id="2_1tv83"]
+[ext_resource type="Script" uid="uid://ba4v5gvvu0cmi" path="res://Logik/DialogueManager/dialogue_resource.gd" id="2_t4t7f"]
+[ext_resource type="AudioStream" uid="uid://dfp4lrpfhd2rg" path="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/hello hello, incoming, we arrived at your location.wav" id="3_nlqhb"]
+[ext_resource type="AudioStream" uid="uid://h4443m3ebs5w" path="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/ook around and try to give us a signal so we can make contact.wav" id="4_bjcdv"]
+[ext_resource type="AudioStream" uid="uid://dghmdqequgt26" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/FIRST_AND_SECOND_CONTACT/whatI dont see anyth - Kopie.wav" id="5_d47py"]
+[ext_resource type="AudioStream" uid="uid://bejj6ehcoyl7a" path="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/oh there you are, up and run.wav" id="6_8ntky"]
+[ext_resource type="AudioStream" uid="uid://8rfsow25hgm7" path="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/up and running.wav" id="7_5e88b"]
+[ext_resource type="AudioStream" uid="uid://je41n5i8uwe3" path="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/wait, how are you.wav" id="8_svitw"]
+[ext_resource type="AudioStream" uid="uid://c3vahamu3wc1f" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/FIRST_AND_SECOND_CONTACT/YOU RESCUED SOMEONE ELSE - Kopie.wav" id="9_fty1c"]
+[ext_resource type="AudioStream" uid="uid://dao010y8pqa8m" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/FIRST_AND_SECOND_CONTACT/well good for him, but didnt you say you found MY location - Kopie.wav" id="10_3hpqc"]
+[ext_resource type="AudioStream" uid="uid://cddq8ss7ebcoj" path="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/I'm really confused.wav" id="11_rswx6"]
+[ext_resource type="AudioStream" uid="uid://d3epqmmk7ydn6" path="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/OHHHHHHHHH.wav" id="12_ouika"]
+[ext_resource type="AudioStream" uid="uid://b67u3ce0616f2" path="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/the map was upside down, hm I wondered why they swaped north and south.wav" id="13_j6vms"]
+[ext_resource type="AudioStream" uid="uid://p7eb0g6k7g3l" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/FIRST_AND_SECOND_CONTACT/sigh please just come and get me, I dont know how many soups I can eat anymore - Kopie.wav" id="14_krbwd"]
+
+[sub_resource type="Resource" id="Resource_1tv83"]
+script = ExtResource("1_e2wfg")
+text = "hello hello, incoming, we arrived at your location!"
+audio = ExtResource("3_nlqhb")
+next_id = 1
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_rgpb4"]
+script = ExtResource("1_e2wfg")
+text = "look around and try to give us a signal so we can make contact!"
+audio = ExtResource("4_bjcdv")
+next_id = 2
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_gxgvn"]
+script = ExtResource("1_e2wfg")
+speaker_name = "Kenny"
+text = "what? I dont see anyth..."
+audio = ExtResource("5_d47py")
+next_id = 3
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_rbgte"]
+script = ExtResource("1_e2wfg")
+text = "oh there you are, up and run..."
+audio = ExtResource("6_8ntky")
+next_id = 4
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_rd431"]
+script = ExtResource("1_e2wfg")
+speaker_name = "Kenny"
+text = "up and running?"
+audio = ExtResource("7_5e88b")
+next_id = 5
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_35pdq"]
+script = ExtResource("1_e2wfg")
+text = "wait, how are you?"
+audio = ExtResource("8_svitw")
+next_id = 6
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_tua7d"]
+script = ExtResource("1_e2wfg")
+speaker_name = "Kenny"
+text = " YOU RESCUED SOMEONE ELSE?"
+audio = ExtResource("9_fty1c")
+next_id = 7
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_yv3y8"]
+script = ExtResource("1_e2wfg")
+speaker_name = "Kenny"
+text = "well good for him, but didnt you say you found MY location?"
+audio = ExtResource("10_3hpqc")
+next_id = 8
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_ad7fj"]
+script = ExtResource("1_e2wfg")
+text = "I'm really confused..."
+audio = ExtResource("11_rswx6")
+next_id = 9
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_lrb0w"]
+script = ExtResource("1_e2wfg")
+text = "OHHHHHH"
+audio = ExtResource("12_ouika")
+next_id = 10
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_r7eyd"]
+script = ExtResource("1_e2wfg")
+text = "the map was upside down, hm I wondered why they swaped north and south...
+"
+audio = ExtResource("13_j6vms")
+next_id = 11
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[sub_resource type="Resource" id="Resource_nlqhb"]
+script = ExtResource("1_e2wfg")
+speaker_name = "Kenny"
+text = "sigh please just come and get me, I dont know how many soups I can eat anymore!"
+audio = ExtResource("14_krbwd")
+is_end = true
+end_callable = "_on_dialogue_finished"
+metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
+
+[resource]
+script = ExtResource("2_t4t7f")
+nodes = Dictionary[int, ExtResource("1_e2wfg")]({
+0: SubResource("Resource_1tv83"),
+1: SubResource("Resource_rgpb4"),
+2: SubResource("Resource_gxgvn"),
+3: SubResource("Resource_rbgte"),
+4: SubResource("Resource_rd431"),
+5: SubResource("Resource_35pdq"),
+6: SubResource("Resource_tua7d"),
+7: SubResource("Resource_yv3y8"),
+8: SubResource("Resource_ad7fj"),
+9: SubResource("Resource_lrb0w"),
+10: SubResource("Resource_r7eyd"),
+11: SubResource("Resource_nlqhb")
+})
+metadata/_custom_type_script = "uid://ba4v5gvvu0cmi"
