@@ -38,6 +38,7 @@ shape = SubResource("BoxShape3D_p0s5q")
 
 [node name="AudioStreamPlayer3DRadio" type="AudioStreamPlayer3D" parent="." unique_id=1514244903 groups=["audioStreamPlayerRadio"]]
 unique_name_in_owner = true
+volume_db = 5.032
 max_db = 0.0
 
 [node name="RadioLight" type="MeshInstance3D" parent="." unique_id=36208346]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3tkw1076uupb"
+path="res://.godot/imported/It_was_poisnous.wav-a821994027f409e9c5fe8722202d35bd.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Dialogues/First Contact/PLAYER/It_was_poisnous.wav"
+dest_files=["res://.godot/imported/It_was_poisnous.wav-a821994027f409e9c5fe8722202d35bd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
