@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://bdkjmj1l0link" path="res://Logik/DialogueManager/dialogue_answer.gd" id="2_03xv4"]
 [ext_resource type="Script" uid="uid://ba4v5gvvu0cmi" path="res://Logik/DialogueManager/dialogue_resource.gd" id="2_yjcjn"]
 [ext_resource type="AudioStream" uid="uid://djmtg05b7lx5k" path="res://Assets/Audio/SFX/StörgeräuschWalkyTalky.wav" id="3_0d3ja"]
-[ext_resource type="AudioStream" uid="uid://da868y756a2cm" path="res://Assets/Audio/Dialogues/First Contact/HARALD-HELLO_CAN_YOU_HEAR_ME.wav" id="4_7xlyr"]
-[ext_resource type="AudioStream" uid="uid://3u0ucbgd8rpr" path="res://Assets/Audio/Dialogues/First Contact/HARALD-HELLO.wav" id="5_w1tuj"]
-[ext_resource type="AudioStream" uid="uid://b3hpyrnbggblq" path="res://Assets/Audio/Dialogues/First Contact/HARALD-oh there are my head phones.wav" id="6_pnde1"]
-[ext_resource type="AudioStream" uid="uid://c8quvitq48h4d" path="res://Assets/Audio/Dialogues/First Contact/HARALD-YES_YES_I_WILL.wav" id="7_4esj2"]
+[ext_resource type="AudioStream" uid="uid://da868y756a2cm" path="res://Assets/Audio/Dialogues/First Contact/HARALD/HARALD-HELLO_CAN_YOU_HEAR_ME.wav" id="3_7xlyr"]
+[ext_resource type="AudioStream" uid="uid://3u0ucbgd8rpr" path="res://Assets/Audio/Dialogues/First Contact/HARALD/HARALD-HELLO.wav" id="4_w1tuj"]
+[ext_resource type="AudioStream" uid="uid://b3hpyrnbggblq" path="res://Assets/Audio/Dialogues/First Contact/HARALD/HARALD-oh there are my head phones.wav" id="5_pnde1"]
+[ext_resource type="AudioStream" uid="uid://c8quvitq48h4d" path="res://Assets/Audio/Dialogues/First Contact/HARALD/HARALD-YES_YES_I_WILL.wav" id="6_4esj2"]
 
 [sub_resource type="Resource" id="Resource_pnde1"]
 script = ExtResource("1_05ccf")
@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 [sub_resource type="Resource" id="Resource_4esj2"]
 script = ExtResource("1_05ccf")
 text = "Hello!!!! Hello, can you hear me???"
-audio = ExtResource("4_7xlyr")
+audio = ExtResource("3_7xlyr")
 next_id = 3
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
@@ -40,7 +40,7 @@ metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 [sub_resource type="Resource" id="Resource_w1tuj"]
 script = ExtResource("1_05ccf")
 text = "HELLO??? "
-audio = ExtResource("5_w1tuj")
+audio = ExtResource("4_w1tuj")
 next_id = 5
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
@@ -54,7 +54,7 @@ metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 [sub_resource type="Resource" id="Resource_41fqy"]
 script = ExtResource("1_05ccf")
 text = "Oh. There are my head phones!"
-audio = ExtResource("6_pnde1")
+audio = ExtResource("5_pnde1")
 next_id = 7
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
@@ -68,7 +68,7 @@ metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 [sub_resource type="Resource" id="Resource_alcoo"]
 script = ExtResource("1_05ccf")
 text = "Yes yes I will *noise*"
-audio = ExtResource("7_4esj2")
+audio = ExtResource("6_4esj2")
 next_id = 9
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 

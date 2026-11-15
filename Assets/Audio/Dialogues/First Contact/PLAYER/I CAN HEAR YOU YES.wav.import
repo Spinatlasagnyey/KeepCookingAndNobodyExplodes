@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bek0li7ccstew"
+path="res://.godot/imported/I CAN HEAR YOU YES.wav-d49a5ba4bad00d2912307bc0401f7cf2.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Dialogues/First Contact/PLAYER/I CAN HEAR YOU YES.wav"
+dest_files=["res://.godot/imported/I CAN HEAR YOU YES.wav-d49a5ba4bad00d2912307bc0401f7cf2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

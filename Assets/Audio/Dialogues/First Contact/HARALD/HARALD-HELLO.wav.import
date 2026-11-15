@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://3u0ucbgd8rpr"
-path="res://.godot/imported/HARALD-HELLO.wav-4e11b4412ac025ffb725cf0d95296eaa.sample"
+path="res://.godot/imported/HARALD-HELLO.wav-00b0e57edf53b2eaa2637b900a3887e2.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/Dialogues/First Contact/HARALD-HELLO.wav"
-dest_files=["res://.godot/imported/HARALD-HELLO.wav-4e11b4412ac025ffb725cf0d95296eaa.sample"]
+source_file="res://Assets/Audio/Dialogues/First Contact/HARALD/HARALD-HELLO.wav"
+dest_files=["res://.godot/imported/HARALD-HELLO.wav-00b0e57edf53b2eaa2637b900a3887e2.sample"]
 
 [params]
 

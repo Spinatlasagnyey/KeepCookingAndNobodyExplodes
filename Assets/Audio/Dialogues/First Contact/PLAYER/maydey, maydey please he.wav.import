@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dygjyf20rvieh"
+path="res://.godot/imported/maydey, maydey please he.wav-53a5d8981a162fe33738a5a35f2af92c.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Dialogues/First Contact/PLAYER/maydey, maydey please he.wav"
+dest_files=["res://.godot/imported/maydey, maydey please he.wav-53a5d8981a162fe33738a5a35f2af92c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
