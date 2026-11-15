@@ -11,6 +11,7 @@ func _ready() -> void:
 	roll_mushroom()
 
 func roll_mushroom():
+	mushroom = Mushroom.new()
 	mushroom.set_merkmale(Game.cap_merkmale.pick_random(), Game.stem_merkmale.pick_random(), Game.mask_merkmale.pick_random())
 	cap.texture = mushroom.cap.texture
 	cap.modulate = Game.colors.pick_random()

@@ -16,21 +16,26 @@ func get_description() -> String:
 	var method_name := Game.get_preparation_name(preparation_method)
 
 	if inversed:
-		return "%s absolutely %s." % [bild, method_name]
-
-	return "%s not %s." % [bild, method_name]
+		return "%s not %s." % [bild, method_name]
+	
+	return "%s absolutely %s." % [bild, method_name]
 
 func get_merkmale() -> Array[Merkmal]:
 	return [merkmal]
 
 func check_poison(mushrooms: Array[Mushroom]) -> int:
+	print(mushrooms.size())
 	for pilz in mushrooms:
 		for pilz_merkmal in pilz.merkmale:
-			if merkmal == pilz_merkmal:
+			print(pilz_merkmal.part_name)
+			if merkmal.part_name == pilz_merkmal.part_name:
+				#print(merkmal.part_name, " ist ", pilz_merkmal.part_name)
 				if inversed:
-					if pilz.preparation_method != preparation_method:
+					if pilz.preparation_method == preparation_method:
 						return poison_effect
 				else:
-					if pilz.preparation_method == preparation_method:
+					if pilz.preparation_method != preparation_method:
+						print(Game.get_preparation_name(pilz.preparation_method), " ist nicht ", Game.get_preparation_name(preparation_method))
+						print("+1 preparation")
 						return poison_effect
 	return 0

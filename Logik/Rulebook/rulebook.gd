@@ -5,17 +5,17 @@ extends Node
 @onready var entries: VBoxContainer = $CanvasLayer/BookPanel/ScrollContainer/Entries
 
 func _ready() -> void:
-	var mush1: Mushroom = Mushroom.new()
-	mush1.set_merkmale(Game.cap_merkmale[0], Game.stem_merkmale[0], MaskMerkmal.new())
-	var mushes: Array[Mushroom] = [mush1]
-	check_poison_outcome(mushes)
+	#var mush1: Mushroom = Mushroom.new()
+	#mush1.set_merkmale(Game.cap_merkmale[0], Game.stem_merkmale[0], MaskMerkmal.new())
+	#var mushes: Array[Mushroom] = [mush1]
+	#check_poison_outcome(mushes)
 	show_rules()
 
 func check_poison_outcome(mushrooms: Array[Mushroom]) -> int:
 	var sum: int = 0
 	for rule in rules:
 		sum += rule.check_poison(mushrooms)
-	print("Die Suppe hat ", sum, " Gifft Punkte")
+	print("Die Suppe hat ", sum, " Gift Punkte")
 	return sum
 	
 func show_rules() -> void:

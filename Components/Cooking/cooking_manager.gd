@@ -8,8 +8,7 @@ var soup: Array[Mushroom] = []
 var mushroom_prepared := false
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		visible = true
+	pass
 
 func add_to_soup(mushroom: Mushroom):
 	soup.append(mushroom)
@@ -35,17 +34,21 @@ func _on_use_mushroom_pressed() -> void:
 	add_to_soup(mushroom_ui.mushroom)
 
 func _on_squash_mushroom_pressed() -> void:
-	mushroom_prepared = true
-	mushroom_ui.prepare_mushroom(Game.PreparationMethod.SQUASHED)
+	if not mushroom_prepared:
+		mushroom_prepared = true
+		mushroom_ui.prepare_mushroom(Game.PreparationMethod.SQUASHED)
 
 func _on_cut_mushroom_pressed() -> void:
-	mushroom_prepared = true
-	mushroom_ui.prepare_mushroom(Game.PreparationMethod.CUT)
-
+	if not mushroom_prepared:
+		mushroom_prepared = true
+		mushroom_ui.prepare_mushroom(Game.PreparationMethod.CUT)
 
 func _on_cook_pressed() -> void:
 	if rulebook:
+		print(soup.size())
 		var poison = rulebook.check_poison_outcome(soup)
 		EventManager.add_poison(poison)
+		soup.clear()
+		visible = false
 	else:
 		print("rulebook missing")

@@ -15,16 +15,19 @@ func get_description() -> String:
 		merkmal_als_bild(merkmal2)
 	]
 
-
 func get_merkmale() -> Array[Merkmal]:
 	return [merkmal1, merkmal2]
 
 func check_poison(mushrooms: Array[Mushroom]) -> int:
+	print(mushrooms.size())
 	for pilz in mushrooms:
 		for pilz_merkmal in pilz.merkmale:
-			if merkmal1 == pilz_merkmal:
+			if merkmal1.part_name == pilz_merkmal.part_name:
+				print(merkmal1.part_name, " ist ", pilz_merkmal.part_name)
 				for pilz2 in mushrooms:
 					for pilz_merkmal2 in pilz2.merkmale:
-						if merkmal2 == pilz_merkmal2:
+						if merkmal2.part_name == pilz_merkmal2.part_name:
+							print(merkmal2.part_name, " ist ", pilz_merkmal2.part_name)
+							print("+1 combination")
 							return poison_effect
 	return 0

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://tlw026oggb1l"]
 
+[ext_resource type="PackedScene" uid="uid://ccog6rqs31kjj" path="res://Logik/Rulebook/rulebook.tscn" id="1_ftutk"]
 [ext_resource type="PackedScene" uid="uid://bxhugcm2o1ejt" path="res://Logik/DialogueManager/dialogue_system.tscn" id="1_tfupf"]
 [ext_resource type="Script" uid="uid://bxmbr5np6eeeq" path="res://Szenen/Scripts/camera_movment.gd" id="2_axpl5"]
 [ext_resource type="Script" uid="uid://oe5x8uh37k6l" path="res://Szenen/Scripts/dialogue_collection.gd" id="2_q5mer"]
@@ -7,13 +8,16 @@
 [ext_resource type="Resource" uid="uid://vj0qycedb74a" path="res://Logik/DialogueManager/dialogue_resource.tres" id="4_60yx3"]
 [ext_resource type="Resource" uid="uid://cf7vq6i6515e0" path="res://Resources/Dialogues/first_contact.tres" id="5_o5mgg"]
 [ext_resource type="PackedScene" uid="uid://dmy80vcehy38q" path="res://leo/scenes/ui.tscn" id="6_anygr"]
+[ext_resource type="PackedScene" uid="uid://d85w6qfcrrc1" path="res://Components/Cooking/cooking_ui.tscn" id="6_js2be"]
 [ext_resource type="Script" uid="uid://dsskgqav1tf1e" path="res://Szenen/Scripts/radio_cube.gd" id="7_anygr"]
 [ext_resource type="AudioStream" uid="uid://dyx4va0n6d8bp" path="res://Assets/Audio/SFX/WalkyTalkySFX.wav" id="9_unhmu"]
 [ext_resource type="AudioStream" uid="uid://bhkrmswbc2f4h" path="res://Assets/Audio/SFX/SFX_WIND_NEW.wav" id="10_js2be"]
 [ext_resource type="PackedScene" uid="uid://cp7kutsvoblvk" path="res://Assets/3D-Objects/Bonfire.fbx" id="11_bbouh"]
+[ext_resource type="Script" uid="uid://scjqyb0xmqpf" path="res://Components/Cooking/cooking_cube.gd" id="11_dhkmp"]
 [ext_resource type="PackedScene" uid="uid://cpaoefyaydrgy" path="res://leo/scenes/BackpackWalkieTalkie.tscn" id="11_rk8eg"]
 [ext_resource type="PackedScene" uid="uid://dmirdug1gj0m7" path="res://leo/scenes/backpack_and_walkie_talkie.tscn" id="12_krsln"]
 [ext_resource type="PackedScene" uid="uid://b3a0o7oi5p6xd" path="res://Assets/3D-Objects/Backpack_and_WalkieTalkie.fbx" id="12_ntwfu"]
+[ext_resource type="Script" uid="uid://dro8p4d8ym4es" path="res://Components/Book/book_cube.gd" id="13_bbouh"]
 [ext_resource type="PackedScene" uid="uid://lyvgh238cpen" path="res://Assets/3D-Objects/suitcase_formushroomstash.fbx" id="13_rk8eg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bbouh"]
@@ -44,9 +48,11 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=64381367]
 environment = SubResource("Environment_rk8eg")
 
-[node name="CameraRig" type="Node3D" parent="." unique_id=456108787]
+[node name="CameraRig" type="Node3D" parent="." unique_id=456108787 node_paths=PackedStringArray("cookingUI", "rulebook")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0807045, 0)
 script = ExtResource("2_axpl5")
+cookingUI = NodePath("../CanvasLayer/CookingUI")
+rulebook = NodePath("../CanvasLayer/Rulebook")
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=1275184382]
 transform = Transform3D(1.1924881e-08, 0.3420201, -0.93969256, 0, 0.93969256, 0.3420201, 1, -4.0785486e-09, 1.1205722e-08, 0, 0, 0)
@@ -60,12 +66,16 @@ dialogues = Dictionary[String, ExtResource("3_60yx3")]({
 "hello": ExtResource("4_60yx3")
 })
 
+[node name="Rulebook" parent="CanvasLayer" unique_id=544736981 instance=ExtResource("1_ftutk")]
+visible = false
+
+[node name="CookingUI" parent="CanvasLayer" unique_id=1786990305 instance=ExtResource("6_js2be")]
+
 [node name="DialogueSystem" parent="CanvasLayer" unique_id=215883827 instance=ExtResource("1_tfupf")]
 unique_name_in_owner = true
 offset_top = 2.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-mouse_filter = 2
 
 [node name="Ui" parent="CanvasLayer" unique_id=2109838708 instance=ExtResource("6_anygr")]
 mouse_filter = 2
@@ -113,3 +123,24 @@ transform = Transform3D(0.5128399, 0, 0.5053665, 0, 0.72, 0, -0.5053665, 0, 0.51
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1792906771]
 mesh = SubResource("PlaneMesh_060g2")
+
+[node name="CookingCube" type="StaticBody3D" parent="." unique_id=1496005424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.8254597)
+script = ExtResource("11_dhkmp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CookingCube" unique_id=84917139]
+mesh = SubResource("BoxMesh_0xql7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookingCube" unique_id=629146791]
+shape = SubResource("BoxShape3D_0xql7")
+
+[node name="BookCube" type="StaticBody3D" parent="." unique_id=922434075 node_paths=PackedStringArray("rulebook")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6591215, 0, 0)
+script = ExtResource("13_bbouh")
+rulebook = NodePath("../CanvasLayer/Rulebook")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BookCube" unique_id=621520623]
+mesh = SubResource("BoxMesh_0xql7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BookCube" unique_id=1853265325]
+shape = SubResource("BoxShape3D_0xql7")

@@ -34,6 +34,7 @@ func _init() -> void:
 				mask_merkmale.append(m)
 
 enum PreparationMethod {
+	UNTOUCHED,
 	CUT,
 	SQUASHED
 }
@@ -44,3 +45,10 @@ func get_preparation_name(preparation_method: PreparationMethod) -> String:
 	if preparation_method == PreparationMethod.SQUASHED:
 		return "squashed"
 	return "whomp whomp"
+
+enum Screens {
+	COOKING,
+	TALKING,
+	READING,
+	LOOKING
+}

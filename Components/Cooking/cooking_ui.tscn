@@ -58,8 +58,10 @@ text = "Cut"
 
 [node name="Cook" type="Button" parent="." unique_id=2111777499]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 682.0
+offset_top = 575.0
+offset_right = 729.0
+offset_bottom = 606.0
 text = "Cook"
 
 [connection signal="pressed" from="TrashMushroom" to="." method="_on_trash_mushroom_pressed"]
