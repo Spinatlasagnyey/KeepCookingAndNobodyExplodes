@@ -17,6 +17,9 @@ func _ready() -> void:
 	target_rotation_y = camera.rotation.y
 
 func _process(delta: float) -> void:
+	if not camera.current:
+		return
+		
 	if Input.is_action_just_released("rotate_left"):
 		target_rotation_y += deg_to_rad(90)
 		smooth_rotate()

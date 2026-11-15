@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://lyvgh238cpen" path="res://Assets/3D-Objects/suitcase_formushroomstash.fbx" id="13_rk8eg"]
 [ext_resource type="Script" uid="uid://c4obk7ddytvqf" path="res://Szenen/Scripts/day_night_cycle.gd" id="16_evutm"]
 [ext_resource type="Environment" uid="uid://cbtln38i4wf0d" path="res://Shaders/main_environment.tres" id="16_krsln"]
+[ext_resource type="PackedScene" uid="uid://bbag7phlj3ko" path="res://Assets/3D-Objects/ClosedBook.fbx" id="16_lwdtq"]
+[ext_resource type="PackedScene" uid="uid://iqwaio23ght6" path="res://Assets/3D-Objects/OpenBook.fbx" id="17_vhro2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_060g2"]
 size = Vector2(100, 100)
@@ -24,6 +26,23 @@ size = Vector2(100, 100)
 [sub_resource type="BoxMesh" id="BoxMesh_0xql7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xql7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pfgbu"]
+size = Vector3(0.9, 0.15, 0.76)
+
+[sub_resource type="QuadMesh" id="QuadMesh_0xql7"]
+size = Vector2(0.34, 0.54)
+
+[sub_resource type="QuadMesh" id="QuadMesh_pfgbu"]
+size = Vector2(0.34, 0.54)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1sfmb"]
+cull_mode = 2
+albedo_color = Color(0.98039216, 0.8156863, 0.7058824, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_770yc"]
+material = SubResource("StandardMaterial3D_1sfmb")
+size = Vector2(0.37, 0.54)
 
 [node name="MainEnviroment" type="Node3D" unique_id=1716867431]
 
@@ -78,6 +97,7 @@ transform = Transform3D(0.91705495, 0, 0.710359, 0, 1.1600001, 0, -0.710359, 0, 
 transform = Transform3D(0.5128399, 0, 0.5053665, 0, 0.72, 0, -0.5053665, 0, 0.5128399, 1.7145724, 0.51567423, -3.4752252)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1792906771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003911376, -2.3841858e-07, 0.0021369457)
 mesh = SubResource("PlaneMesh_060g2")
 
 [node name="CookingCube" type="StaticBody3D" parent="." unique_id=1496005424]
@@ -91,15 +111,41 @@ mesh = SubResource("BoxMesh_0xql7")
 shape = SubResource("BoxShape3D_0xql7")
 
 [node name="BookCube" type="StaticBody3D" parent="." unique_id=922434075 node_paths=PackedStringArray("rulebook")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6591215, 0, 0)
+transform = Transform3D(-4.371139e-08, 0.86602545, 0.49999997, 0, 0.49999997, -0.86602545, -1, -3.7855173e-08, -2.1855692e-08, -1.05, 0.7, 0)
 script = ExtResource("13_bbouh")
 rulebook = NodePath("../CanvasLayer/Rulebook")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BookCube" unique_id=621520623]
+visible = false
 mesh = SubResource("BoxMesh_0xql7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BookCube" unique_id=1853265325]
-shape = SubResource("BoxShape3D_0xql7")
+shape = SubResource("BoxShape3D_pfgbu")
+
+[node name="LeftViewport" type="SubViewport" parent="BookCube" unique_id=242108048]
+
+[node name="RightViewport" type="SubViewport" parent="BookCube" unique_id=1420890083]
+
+[node name="LeftPage" type="MeshInstance3D" parent="BookCube" unique_id=333897282]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.2, 0.037, 0)
+mesh = SubResource("QuadMesh_0xql7")
+
+[node name="RightPage" type="MeshInstance3D" parent="BookCube" unique_id=75491175]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.2, 0.037, 0)
+mesh = SubResource("QuadMesh_pfgbu")
+
+[node name="FlipPivot" type="Node3D" parent="BookCube" unique_id=205651775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
+
+[node name="FlipPage" type="MeshInstance3D" parent="BookCube/FlipPivot" unique_id=893019696]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.185, 0, 0)
+mesh = SubResource("QuadMesh_770yc")
+
+[node name="ClosedBook" parent="BookCube" unique_id=2031466232 instance=ExtResource("16_lwdtq")]
+transform = Transform3D(-1.4424758e-08, 0, 0.33, 0, 0.33, 0, -0.33, 0, -1.4424758e-08, 0, 0.04, 0)
+
+[node name="OpenBook" parent="BookCube" unique_id=1632977722 instance=ExtResource("17_vhro2")]
+transform = Transform3D(-1.13649605e-08, 0, 0.26, 0, 0.26, 0, -0.26, 0, -1.13649605e-08, 0, 0, 0)
 
 [node name="DayNightCycle" type="Node3D" parent="." unique_id=2105697141]
 script = ExtResource("16_evutm")
@@ -110,3 +156,5 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="DayNightCycle" unique_id=64381367]
 environment = ExtResource("16_krsln")
+
+[editable path="BookCube/OpenBook"]

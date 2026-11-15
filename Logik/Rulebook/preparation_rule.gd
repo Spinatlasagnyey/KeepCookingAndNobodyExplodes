@@ -10,15 +10,17 @@ extends Rule
 
 func get_description() -> String:
 	if merkmal == null:
-		return "This rules needs a feature."
+		return "This rule needs a feature."
 
-	var bild := merkmal_als_bild(merkmal)
 	var method_name := Game.get_preparation_name(preparation_method)
-
+	var instruction := "Must be %s" % method_name
 	if inversed:
-		return "%s not %s." % [bild, method_name]
-	
-	return "%s absolutely %s." % [bild, method_name]
+		instruction = "Must not be %s" % method_name
+
+	return "[center][b][font_size=36]%s[/font_size][/b]\n%s[/center]" % [
+		instruction,
+		merkmal_als_bild(merkmal)
+	]
 
 func get_merkmale() -> Array[Merkmal]:
 	return [merkmal]
