@@ -32,6 +32,7 @@ folder_colors={
 "res://Components/": "pink",
 "res://Logik/": "blue",
 "res://Resources/": "teal",
+"res://Shader/": "green",
 "res://Szenen/": "red",
 "res://leo/": "purple"
 }
