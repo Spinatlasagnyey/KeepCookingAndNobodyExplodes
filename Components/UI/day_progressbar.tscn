@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c6i84orhewcwv"]
+
+[ext_resource type="Texture2D" uid="uid://td0frbttknbn" path="res://Assets/2D-Assets/progressbarRadialBG.png" id="1_stc5l"]
+[ext_resource type="Texture2D" uid="uid://bwxoeimc6kklb" path="res://Assets/2D-Assets/progressbarRadialOver.png" id="2_i1ov8"]
+[ext_resource type="Texture2D" uid="uid://bplebj43uxorw" path="res://Assets/2D-Assets/progressbarRadialProgress.png" id="3_r50qu"]
+
+[node name="DayProgressbar" type="Control" unique_id=588083069]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=2129048]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+value = 89.0
+fill_mode = 8
+radial_initial_angle = 270.0
+radial_center_offset = Vector2(0, 50.465)
+texture_under = ExtResource("1_stc5l")
+texture_over = ExtResource("2_i1ov8")
+texture_progress = ExtResource("3_r50qu")
