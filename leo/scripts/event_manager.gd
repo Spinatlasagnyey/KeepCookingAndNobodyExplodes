@@ -121,4 +121,11 @@ func check_dialogue_due():
 			print(str(dialogue_scheduled) + " fällig")
 			dialogue_alert.emit(dialogue_scheduled.dialogue_resource)
 			working_dialogue_schedule.erase(dialogue_scheduled)
-	
+			
+func get_day_progress() -> float:
+	var elapsed := time_passed
+
+	if not day_timer.is_stopped():
+		elapsed += day_timer.wait_time - day_timer.time_left
+
+	return clampf(elapsed / float(SECONDS_PER_DAY), 0.0, 1.0)

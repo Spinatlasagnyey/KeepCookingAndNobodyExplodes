@@ -1,0 +1,29 @@
+[remap]
+
+importer="3d_texture"
+type="CompressedTexture3D"
+uid="uid://dbfbysid168mx"
+path.bptc="res://.godot/imported/perlworlnoise.tga-f1a62981871c410c41f4e10c02b15b8b.bptc.ctex3d"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Assets/Sky/Cloud/perlworlnoise.tga"
+dest_files=["res://.godot/imported/perlworlnoise.tga-f1a62981871c410c41f4e10c02b15b8b.bptc.ctex3d"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=true
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+slices/horizontal=128
+slices/vertical=1
