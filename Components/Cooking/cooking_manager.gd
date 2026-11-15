@@ -7,6 +7,7 @@ var soup: Array[Mushroom] = []
 @onready var canvas: CanvasLayer = get_tree().get_first_node_in_group("canvas_layer")
 @onready var sfx_game: Node2D = $Audio;
 const ALREADY_FULL_WARNING = preload("res://Components/Cooking/already_full_warning.tscn")
+var its_poisoned = preload("res://Components/Cooking/its_poisonous.tscn")
 
 @export var mushroom_ui: MushroomManager
 
@@ -45,11 +46,13 @@ func cook():
 		EventManager.add_fullness(soup.size())
 		var poison = rulebook.check_poison_outcome(soup)
 		EventManager.add_poison(poison)
+		if poison > 0:
+			var inst: AudioStreamPlayer2D = its_poisoned.instantiate()
+			get_tree().current_scene.add_child(inst)
 		soup.clear()
 		visible = false
 	else:
 		print("rulebook missing")
-
 
 func _on_trash_mushroom_pressed() -> void:
 	discard_mushroom()

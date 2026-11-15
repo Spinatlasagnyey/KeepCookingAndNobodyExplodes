@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dl20fve8g8iu3"]
+
+[ext_resource type="AudioStream" uid="uid://3tkw1076uupb" path="res://Assets/Audio/Dialogues/First Contact/PLAYER/It_was_poisnous.wav" id="1_2bxd7"]
+
+[sub_resource type="GDScript" id="GDScript_dfpw8"]
+script/source = "extends AudioStreamPlayer2D
+
+func _ready() -> void:
+	await get_tree().create_timer(5).timeout
+	queue_free()
+"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=2017524884]
+stream = ExtResource("1_2bxd7")
+autoplay = true
+script = SubResource("GDScript_dfpw8")
