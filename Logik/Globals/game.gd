@@ -20,7 +20,7 @@ var stem_merkmale: Array[StemMerkmal]
 var cap_merkmale: Array[CapMerkmal]
 var mask_merkmale: Array[MaskMerkmal]
 
-var colors: Array[Color] = [Color.FIREBRICK, Color.DARK_BLUE, Color.WEB_GREEN, Color.PURPLE, Color.DARK_ORANGE, Color.TEAL]
+var colors: Array[Color] = [Color.FIREBRICK, Color.DARK_BLUE, Color.LIME_GREEN, Color.PURPLE, Color.DARK_ORANGE, Color.DARK_TURQUOISE]
 
 func _init() -> void:
 	for merkmal in merkmal_rescourcen:
