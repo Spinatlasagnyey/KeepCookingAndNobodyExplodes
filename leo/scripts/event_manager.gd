@@ -43,6 +43,8 @@ func _ready() -> void:
 	new_day.emit(current_day, SECONDS_PER_DAY)
 	time_passed_changed.emit(time_passed)
 	
+	start_day_timer()
+	
 	
 func _physics_process(_delta: float) -> void:
 	# hier vielleicht basierend auf aktuellem PoisonLevel 
@@ -51,9 +53,9 @@ func _physics_process(_delta: float) -> void:
 		add_poison(5.0)
 		print("poisoned")
 		
-	if Input.is_action_just_pressed("ui_accept"):
-		start_day_timer()
-		print("timer started")
+	#if Input.is_action_just_pressed("ui_accept"):
+		#start_day_timer()
+		#print("timer started")
 	
 	if Input.is_action_just_pressed("add_fullness_debug"):
 		add_fullness(1.0)

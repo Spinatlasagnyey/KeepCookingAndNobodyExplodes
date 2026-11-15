@@ -33,7 +33,7 @@ func start_dialogue(caller: Node, dialogue: DialogueResource):
 func _unhandled_input(event: InputEvent) -> void:
 	if not in_dialogue:
 		return
-	if event.is_action_pressed("interact") or Input.is_action_just_pressed("ui_back"):
+	if event.is_action_pressed("interact") or Input.is_action_just_pressed("ui_back") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		continue_dialogue()
 
 func continue_dialogue(starting: bool = false):

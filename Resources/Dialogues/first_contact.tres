@@ -13,7 +13,6 @@
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "Mayday, mayday, please I need help, I crashed on a small island ... again"
-audio = ExtResource("3_0d3ja")
 next_id = 1
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
@@ -21,7 +20,6 @@ metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "Mayday, mayday, please hel-"
-audio = ExtResource("3_0d3ja")
 next_id = 2
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
@@ -36,7 +34,6 @@ metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "Hello! Hello! I can hear you!!"
-audio = ExtResource("3_0d3ja")
 next_id = 4
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
@@ -51,7 +48,6 @@ metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "I CAN HEAR YOU YES"
-audio = ExtResource("3_0d3ja")
 next_id = 6
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
@@ -66,7 +62,6 @@ metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "...can you help me? I crashed with my plane on a lost island, can you send someone to rescue me?"
-audio = ExtResource("3_0d3ja")
 next_id = 8
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
@@ -97,8 +92,8 @@ metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 script = ExtResource("1_05ccf")
 speaker_name = "Kenny"
 text = "Damn I'm hungry, lets find me something to eat!"
-audio = ExtResource("3_0d3ja")
 is_end = true
+end_callable = "_on_dialogue_finished"
 metadata/_custom_type_script = "uid://vnh8i3fyp2ny"
 
 [resource]

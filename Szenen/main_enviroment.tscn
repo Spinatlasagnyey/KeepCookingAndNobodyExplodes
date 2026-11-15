@@ -9,14 +9,10 @@
 [ext_resource type="Resource" uid="uid://cf7vq6i6515e0" path="res://Resources/Dialogues/first_contact.tres" id="5_o5mgg"]
 [ext_resource type="PackedScene" uid="uid://dmy80vcehy38q" path="res://leo/scenes/ui.tscn" id="6_anygr"]
 [ext_resource type="PackedScene" uid="uid://d85w6qfcrrc1" path="res://Components/Cooking/cooking_ui.tscn" id="6_js2be"]
-[ext_resource type="Script" uid="uid://dsskgqav1tf1e" path="res://Szenen/Scripts/radio_cube.gd" id="7_anygr"]
-[ext_resource type="AudioStream" uid="uid://dyx4va0n6d8bp" path="res://Assets/Audio/SFX/WalkyTalkySFX.wav" id="9_unhmu"]
 [ext_resource type="AudioStream" uid="uid://bhkrmswbc2f4h" path="res://Assets/Audio/SFX/SFX_WIND_NEW.wav" id="10_js2be"]
 [ext_resource type="PackedScene" uid="uid://cp7kutsvoblvk" path="res://Assets/3D-Objects/Bonfire.fbx" id="11_bbouh"]
 [ext_resource type="Script" uid="uid://scjqyb0xmqpf" path="res://Components/Cooking/cooking_cube.gd" id="11_dhkmp"]
 [ext_resource type="PackedScene" uid="uid://cpaoefyaydrgy" path="res://leo/scenes/BackpackWalkieTalkie.tscn" id="11_rk8eg"]
-[ext_resource type="PackedScene" uid="uid://dmirdug1gj0m7" path="res://leo/scenes/backpack_and_walkie_talkie.tscn" id="12_krsln"]
-[ext_resource type="PackedScene" uid="uid://b3a0o7oi5p6xd" path="res://Assets/3D-Objects/Backpack_and_WalkieTalkie.fbx" id="12_ntwfu"]
 [ext_resource type="Script" uid="uid://dro8p4d8ym4es" path="res://Components/Book/book_cube.gd" id="13_bbouh"]
 [ext_resource type="PackedScene" uid="uid://lyvgh238cpen" path="res://Assets/3D-Objects/suitcase_formushroomstash.fbx" id="13_rk8eg"]
 
@@ -32,12 +28,12 @@ background_mode = 2
 sky = SubResource("Sky_ntwfu")
 glow_enabled = true
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_060g2"]
+size = Vector2(100, 100)
+
 [sub_resource type="BoxMesh" id="BoxMesh_0xql7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xql7"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_060g2"]
-size = Vector2(100, 100)
 
 [node name="MainEnviroment" type="Node3D" unique_id=1716867431]
 
@@ -80,21 +76,6 @@ size_flags_vertical = 4
 [node name="Ui" parent="CanvasLayer" unique_id=2109838708 instance=ExtResource("6_anygr")]
 mouse_filter = 2
 
-[node name="RadioCube" type="StaticBody3D" parent="." unique_id=916767358 node_paths=PackedStringArray("dialogue_collection")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0908935, 0.50154567, 0)
-script = ExtResource("7_anygr")
-alertSound = ExtResource("9_unhmu")
-dialogue_collection = NodePath("../CanvasLayer")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RadioCube" unique_id=732477871]
-mesh = SubResource("BoxMesh_0xql7")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RadioCube" unique_id=601102096]
-shape = SubResource("BoxShape3D_0xql7")
-
-[node name="AudioStreamPlayer3DRadio" type="AudioStreamPlayer3D" parent="RadioCube" unique_id=1911349520 groups=["audioStreamPlayerRadio"]]
-max_db = 0.0
-
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2143861798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5751717, 0, -0.6599126)
 stream = ExtResource("10_js2be")
@@ -105,18 +86,10 @@ autoplay = true
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.117, 0, -0.048557192)
 
 [node name="BackpackWalkieTalkie" parent="3dObjects" unique_id=773662149 instance=ExtResource("11_rk8eg")]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 4.8399744, 0.7618359, 0)
-
-[node name="Backpack_and_WalkieTalkie2" parent="3dObjects" unique_id=1845331427 instance=ExtResource("12_krsln")]
-transform = Transform3D(0.9070703, 0.6186567, 0.37428215, -0.66567576, 0.9489323, 0.044756256, -0.28231, -0.24978246, 1.0970458, 4.486336, 0.67776585, 1.6280761)
-visible = false
+transform = Transform3D(0.8909653, 0.6256632, 0.33812153, -0.655143, 0.93294555, 4.1395807e-09, -0.27670968, -0.19431405, 1.0887028, 4.4673586, 0.7618359, 1.6386257)
 
 [node name="Bonfire" parent="3dObjects" unique_id=215885773 instance=ExtResource("11_bbouh")]
 transform = Transform3D(0.91705495, 0, 0.710359, 0, 1.1600001, 0, -0.710359, 0, 0.91705495, -1.3845471, 0, -5.164516)
-
-[node name="Backpack_and_WalkieTalkie" parent="3dObjects" unique_id=121921870 instance=ExtResource("12_ntwfu")]
-transform = Transform3D(0.9377296, 0.54264826, 0.41448087, -0.58100295, 1.004009, 0, -0.3587437, -0.20759895, 1.0834225, 4.4807253, 0.7251266, 1.5970541)
-visible = false
 
 [node name="suitcase_formushroomstash" parent="3dObjects" unique_id=143594808 instance=ExtResource("13_rk8eg")]
 transform = Transform3D(0.5128399, 0, 0.5053665, 0, 0.72, 0, -0.5053665, 0, 0.5128399, 1.7145724, 0.51567423, -3.4752252)

@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://dkn7s8tnooc85" path="res://Logik/DialogueManager/dialogue_answers_manager.gd" id="2_x8gi8"]
 [ext_resource type="PackedScene" uid="uid://pnj538ncvhr2" path="res://Logik/DialogueManager/answer_button.tscn" id="3_acjif"]
 [ext_resource type="Texture2D" uid="uid://cjs62jdg4phbh" path="res://Assets/Dialogue/background.png" id="4_acjif"]
+[ext_resource type="Texture2D" uid="uid://v8jafdtcwh6c" path="res://Assets/Dialogue/nonstatic_talking.png" id="5_vwnve"]
+[ext_resource type="Texture2D" uid="uid://sllijvq4odad" path="res://Assets/Dialogue/static_talking.png" id="6_f2ba1"]
 
 [sub_resource type="Animation" id="Animation_fo83j"]
 length = 0.001
@@ -121,6 +123,7 @@ size_flags_stretch_ratio = 3.0
 mouse_filter = 2
 
 [node name="Sprite2D" type="TextureRect" parent="DialogueSystem/DialogueBox" unique_id=1989650244]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -131,12 +134,37 @@ mouse_filter = 2
 texture = ExtResource("4_acjif")
 expand_mode = 1
 
+[node name="TextboxKenny" type="TextureRect" parent="DialogueSystem/DialogueBox" unique_id=2097559604]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_vwnve")
+expand_mode = 1
+
+[node name="TextboxRadio" type="TextureRect" parent="DialogueSystem/DialogueBox" unique_id=1745603562]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_f2ba1")
+expand_mode = 1
+
 [node name="RadioTitle" type="RichTextLabel" parent="DialogueSystem/DialogueBox" unique_id=517189031]
 layout_mode = 0
-offset_left = 83.0
-offset_top = 63.0
-offset_right = 368.0
-offset_bottom = 91.0
+offset_left = 54.0
+offset_top = 54.0
+offset_right = 408.0
+offset_bottom = 82.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.145, 0.145, 0.145, 1)
 theme_override_font_sizes/bold_font_size = 18
@@ -146,10 +174,11 @@ scroll_active = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="DialogueSystem/DialogueBox" unique_id=1719492660]
 layout_mode = 0
-offset_left = 83.0
-offset_top = 103.0
-offset_right = 368.0
-offset_bottom = 179.0
+offset_left = 55.0
+offset_top = 98.0
+offset_right = 407.0
+offset_bottom = 231.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.145, 0.145, 0.145, 1)
 theme_override_font_sizes/normal_font_size = 22
+text = "...can you help me? I crashed with my plane on a lost island, can you send someone to rescue me?"
