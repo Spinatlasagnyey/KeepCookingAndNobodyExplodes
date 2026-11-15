@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bedt0j10c6rrb" path="res://Assets/Audio/SFX/Knife.wav" id="3_u0a2p"]
 [ext_resource type="AudioStream" uid="uid://c7rgf4v5hq1xf" path="res://Assets/Audio/SFX/2Selection.wav" id="4_xpqwy"]
 [ext_resource type="AudioStream" uid="uid://bpgvcisxec5y5" path="res://Assets/Audio/SFX/squash.wav" id="5_faihs"]
+[ext_resource type="AudioStream" uid="uid://xxtjv4umydcg" path="res://Assets/Audio/SFX/throwsfx.wav" id="5_rhd3d"]
 [ext_resource type="AudioStream" uid="uid://co7nelacy4rvy" path="res://Assets/Audio/SFX/PutInPot.wav" id="6_b1y65"]
 
 [node name="CookingUI" type="Control" unique_id=1786990305 node_paths=PackedStringArray("mushroom_ui")]
@@ -70,8 +71,16 @@ text = "Cook"
 
 [node name="Audio" type="Node2D" parent="." unique_id=1324278025]
 
+[node name="COOKUSW" type="AudioStreamPlayer2D" parent="Audio" unique_id=996600069]
+stream = ExtResource("4_xpqwy")
+volume_db = 3.876
+
 [node name="Cut" type="AudioStreamPlayer2D" parent="Audio" unique_id=1944150258]
 stream = ExtResource("3_u0a2p")
+volume_db = 10.0
+
+[node name="Throw" type="AudioStreamPlayer2D" parent="Audio" unique_id=2033540017]
+stream = ExtResource("5_rhd3d")
 volume_db = 10.0
 
 [node name="PuDown" type="AudioStreamPlayer2D" parent="Audio" unique_id=784639147]

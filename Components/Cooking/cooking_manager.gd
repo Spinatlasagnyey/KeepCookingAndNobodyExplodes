@@ -30,6 +30,7 @@ func add_to_soup(mushroom: Mushroom):
 	visible = false
 
 func discard_mushroom():
+	sfx_game.get_node("COOKUSW").play();
 	visible = false
 	mushroom_ui.roll_mushroom()
 	mushroom_prepared = false
@@ -40,6 +41,7 @@ func pick_up_mushroom():
 func cook():
 	if rulebook:
 		print(soup.size())
+		sfx_game.get_node("COOKUSW").play();
 		EventManager.add_fullness(soup.size())
 		var poison = rulebook.check_poison_outcome(soup)
 		EventManager.add_poison(poison)
