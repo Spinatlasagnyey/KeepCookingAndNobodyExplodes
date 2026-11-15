@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c423kfuqhdq37" path="res://Components/Cooking/cooking_manager.gd" id="1_7gnrb"]
 [ext_resource type="PackedScene" uid="uid://cmg7ivfpgcq3o" path="res://Components/Pilz/pilz.tscn" id="2_6llp0"]
+[ext_resource type="AudioStream" uid="uid://bedt0j10c6rrb" path="res://Assets/Audio/SFX/Knife.wav" id="3_u0a2p"]
+[ext_resource type="AudioStream" uid="uid://c7rgf4v5hq1xf" path="res://Assets/Audio/SFX/2Selection.wav" id="4_xpqwy"]
+[ext_resource type="AudioStream" uid="uid://bpgvcisxec5y5" path="res://Assets/Audio/SFX/squash.wav" id="5_faihs"]
+[ext_resource type="AudioStream" uid="uid://co7nelacy4rvy" path="res://Assets/Audio/SFX/PutInPot.wav" id="6_b1y65"]
 
 [node name="CookingUI" type="Control" unique_id=1786990305 node_paths=PackedStringArray("mushroom_ui")]
 layout_mode = 3
@@ -63,6 +67,23 @@ offset_top = 575.0
 offset_right = 729.0
 offset_bottom = 606.0
 text = "Cook"
+
+[node name="Audio" type="Node2D" parent="." unique_id=1324278025]
+
+[node name="Cut" type="AudioStreamPlayer2D" parent="Audio" unique_id=1944150258]
+stream = ExtResource("3_u0a2p")
+volume_db = 10.0
+
+[node name="PuDown" type="AudioStreamPlayer2D" parent="Audio" unique_id=784639147]
+stream = ExtResource("4_xpqwy")
+
+[node name="Squash" type="AudioStreamPlayer2D" parent="Audio" unique_id=2115837151]
+stream = ExtResource("5_faihs")
+volume_db = 10.0
+
+[node name="PutInPot" type="AudioStreamPlayer2D" parent="Audio" unique_id=1744218099]
+stream = ExtResource("6_b1y65")
+volume_db = 10.0
 
 [connection signal="pressed" from="TrashMushroom" to="." method="_on_trash_mushroom_pressed"]
 [connection signal="pressed" from="PutDownMushroom" to="." method="_on_put_down_mushroom_pressed"]

@@ -1,9 +1,11 @@
 extends Control
 
 var soup: Array[Mushroom] = []
+
 @export var max_soup_size: int = 6
 @onready var rulebook: Rulebook = get_tree().get_first_node_in_group("rulebook")
 @onready var canvas: CanvasLayer = get_tree().get_first_node_in_group("canvas_layer")
+@onready var sfx_game: Node2D = $Audio;
 const ALREADY_FULL_WARNING = preload("res://Components/Cooking/already_full_warning.tscn")
 
 @export var mushroom_ui: MushroomManager
@@ -20,7 +22,9 @@ func add_to_soup(mushroom: Mushroom):
 			canvas.add_child(inst)
 		visible = false
 		return
+	sfx_game.get_node("PutInPot").play();
 	soup.append(mushroom)
+	
 	mushroom_ui.roll_mushroom()
 	mushroom_prepared = false
 	visible = false
@@ -55,11 +59,13 @@ func _on_use_mushroom_pressed() -> void:
 
 func _on_squash_mushroom_pressed() -> void:
 	if not mushroom_prepared:
+		sfx_game.get_node("Squash").play()
 		mushroom_prepared = true
 		mushroom_ui.prepare_mushroom(Game.PreparationMethod.SQUASHED)
 
 func _on_cut_mushroom_pressed() -> void:
 	if not mushroom_prepared:
+		sfx_game.get_node("Cut").play()
 		mushroom_prepared = true
 		mushroom_ui.prepare_mushroom(Game.PreparationMethod.CUT)
 
