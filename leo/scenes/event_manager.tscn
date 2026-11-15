@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://lruc0pdyucsk" path="res://leo/scripts/event_manager.gd" id="1_66soh"]
 [ext_resource type="Resource" uid="uid://cf7vq6i6515e0" path="res://Resources/Dialogues/first_contact.tres" id="2_hn5gc"]
 [ext_resource type="Script" uid="uid://b7wuildcvmwcb" path="res://leo/scripts/dialogue_scheduled.gd" id="3_1ot2l"]
+[ext_resource type="Resource" uid="uid://bpsibakayvvlm" path="res://Resources/Dialogues/day2.tres" id="4_hscvf"]
+[ext_resource type="Resource" uid="uid://dtatnkmyt5l1c" path="res://Resources/Dialogues/day3.tres" id="5_6cujg"]
 
 [sub_resource type="Resource" id="Resource_66soh"]
 script = ExtResource("3_1ot2l")
@@ -11,9 +13,23 @@ time_of_day_percent = 0.1
 dialogue_resource = ExtResource("2_hn5gc")
 metadata/_custom_type_script = "uid://b7wuildcvmwcb"
 
+[sub_resource type="Resource" id="Resource_0rjt6"]
+script = ExtResource("3_1ot2l")
+day = 2
+time_of_day_percent = 0.25
+dialogue_resource = ExtResource("4_hscvf")
+metadata/_custom_type_script = "uid://b7wuildcvmwcb"
+
+[sub_resource type="Resource" id="Resource_x3cfa"]
+script = ExtResource("3_1ot2l")
+day = 3
+time_of_day_percent = 0.3
+dialogue_resource = ExtResource("5_6cujg")
+metadata/_custom_type_script = "uid://b7wuildcvmwcb"
+
 [node name="EventManager" type="Node" unique_id=1803634714]
 script = ExtResource("1_66soh")
-dialogue_schedule = Array[ExtResource("3_1ot2l")]([SubResource("Resource_66soh")])
+dialogue_schedule = Array[ExtResource("3_1ot2l")]([SubResource("Resource_66soh"), SubResource("Resource_0rjt6"), SubResource("Resource_x3cfa")])
 
 [node name="DayTimer" type="Timer" parent="." unique_id=792998455]
 unique_name_in_owner = true
