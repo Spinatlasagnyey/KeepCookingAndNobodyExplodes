@@ -9,6 +9,8 @@
 [ext_resource type="Resource" uid="uid://cf7vq6i6515e0" path="res://Resources/Dialogues/first_contact.tres" id="5_o5mgg"]
 [ext_resource type="PackedScene" uid="uid://dmy80vcehy38q" path="res://leo/scenes/ui.tscn" id="6_anygr"]
 [ext_resource type="PackedScene" uid="uid://d85w6qfcrrc1" path="res://Components/Cooking/cooking_ui.tscn" id="6_js2be"]
+[ext_resource type="Script" uid="uid://dsskgqav1tf1e" path="res://Szenen/Scripts/radio_cube.gd" id="7_anygr"]
+[ext_resource type="AudioStream" uid="uid://dyx4va0n6d8bp" path="res://Assets/Audio/SFX/WalkyTalkySFX.wav" id="9_unhmu"]
 [ext_resource type="AudioStream" uid="uid://bhkrmswbc2f4h" path="res://Assets/Audio/SFX/SFX_WIND_NEW.wav" id="10_js2be"]
 [ext_resource type="PackedScene" uid="uid://cp7kutsvoblvk" path="res://Assets/3D-Objects/Bonfire.fbx" id="11_bbouh"]
 [ext_resource type="Script" uid="uid://scjqyb0xmqpf" path="res://Components/Cooking/cooking_cube.gd" id="11_dhkmp"]
@@ -29,9 +31,6 @@ sky_material = SubResource("ProceduralSkyMaterial_bbouh")
 background_mode = 2
 sky = SubResource("Sky_ntwfu")
 glow_enabled = true
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_060g2"]
-size = Vector2(100, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0xql7"]
 
@@ -95,12 +94,11 @@ text = "COOK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RadioCube" type="StaticBody3D" parent="." unique_id=916767358 node_paths=PackedStringArray("dialogue_collection")]
+[node name="RadioCube" type="StaticBody3D" parent="." unique_id=916767358]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0908935, 0.50154567, 0)
 visible = false
 script = ExtResource("7_anygr")
 alertSound = ExtResource("9_unhmu")
-dialogue_collection = NodePath("../CanvasLayer")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RadioCube" unique_id=732477871]
 mesh = SubResource("BoxMesh_0xql7")
