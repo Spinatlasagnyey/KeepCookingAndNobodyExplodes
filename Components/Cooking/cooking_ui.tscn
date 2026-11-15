@@ -20,13 +20,15 @@ mushroom_ui = NodePath("Pilz")
 
 [node name="Pilz" parent="." unique_id=52608359 instance=ExtResource("2_6llp0")]
 layout_mode = 1
+offset_left = -3.0517578e-05
+offset_right = -6.1035156e-05
 
 [node name="TrashMushroom" type="Button" parent="." unique_id=771401031]
 layout_mode = 0
-offset_left = 1057.0
-offset_top = 575.0
-offset_right = 1109.0
-offset_bottom = 615.0
+offset_left = 1055.0
+offset_top = 586.0
+offset_right = 1107.0
+offset_bottom = 617.0
 text = "Trash"
 
 [node name="PutDownMushroom" type="Button" parent="." unique_id=368826198]
@@ -64,9 +66,9 @@ text = "Cut"
 [node name="Cook" type="Button" parent="." unique_id=2111777499]
 layout_mode = 0
 offset_left = 682.0
-offset_top = 575.0
+offset_top = 570.0
 offset_right = 729.0
-offset_bottom = 606.0
+offset_bottom = 601.0
 text = "Cook"
 
 [node name="Audio" type="Node2D" parent="." unique_id=1324278025]
