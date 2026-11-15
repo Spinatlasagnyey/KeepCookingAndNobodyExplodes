@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://c4obk7ddytvqf" path="res://Szenen/Scripts/day_night_cycle.gd" id="16_evutm"]
 [ext_resource type="Environment" uid="uid://cbtln38i4wf0d" path="res://Shaders/main_environment.tres" id="16_krsln"]
 [ext_resource type="Script" uid="uid://bhlith4q7hjup" path="res://Components/Cooking/pot_cube.gd" id="19_vhro2"]
+[ext_resource type="AudioStream" uid="uid://dtd28wk3wvwyk" path="res://Assets/Audio/SFX/2LAGERFEUERSFX.wav" id="20_vhro2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_060g2"]
 size = Vector2(100, 100)
@@ -74,12 +75,6 @@ mouse_filter = 2
 text = "COOK"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2143861798]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5751717, 0, -0.6599126)
-stream = ExtResource("10_js2be")
-max_db = 6.0
-autoplay = true
 
 [node name="3dObjects" type="Node3D" parent="." unique_id=636658562]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.117, 0, -0.048557192)
@@ -142,6 +137,16 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="DayNightCycle" unique_id=64381367]
 environment = ExtResource("16_krsln")
+
+[node name="MUSICSFX" type="Node3D" parent="." unique_id=1023701968]
+
+[node name="WIND" type="AudioStreamPlayer3D" parent="MUSICSFX" unique_id=74045594]
+stream = ExtResource("10_js2be")
+autoplay = true
+
+[node name="FIREPLACE" type="AudioStreamPlayer3D" parent="MUSICSFX" unique_id=269281972]
+stream = ExtResource("20_vhro2")
+autoplay = true
 
 [connection signal="mouse_entered" from="PotCube" to="PotCube" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="PotCube" to="PotCube" method="_on_mouse_exited"]
