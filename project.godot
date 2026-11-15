@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="KeepCookingAndNobodyExplodes"
-run/main_scene="uid://tlw026oggb1l"
+run/main_scene="uid://dmpj1dua6mmec"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dhggjg0ba6mti"
 
 [autoload]
 
@@ -83,3 +83,4 @@ ui_back={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true

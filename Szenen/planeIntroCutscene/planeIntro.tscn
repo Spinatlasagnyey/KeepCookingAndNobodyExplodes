@@ -125,7 +125,7 @@ fov = 56.605938
 [node name="PlaneWithAnimation" parent="." unique_id=936237104 instance=ExtResource("3_786ad")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 1.0000005, 0, 40.9162, 0)
 
-[node name="AnimationPlayer" parent="PlaneWithAnimation" index="1" unique_id=247181560]
+[node name="AnimationPlayer" parent="PlaneWithAnimation" index="1" unique_id=796152014]
 autoplay = &"Fly"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=4178131]

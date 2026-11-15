@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b123ytdbeopn"
 path.s3tc="res://.godot/imported/Backpack_and_WalkieTalkie_0.png-83136852a262e1e3471150a54b538876.s3tc.ctex"
+path.etc2="res://.godot/imported/Backpack_and_WalkieTalkie_0.png-83136852a262e1e3471150a54b538876.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/3D-Objects/Backpack_and_WalkieTalkie_0.png"
-dest_files=["res://.godot/imported/Backpack_and_WalkieTalkie_0.png-83136852a262e1e3471150a54b538876.s3tc.ctex"]
+dest_files=["res://.godot/imported/Backpack_and_WalkieTalkie_0.png-83136852a262e1e3471150a54b538876.s3tc.ctex", "res://.godot/imported/Backpack_and_WalkieTalkie_0.png-83136852a262e1e3471150a54b538876.etc2.ctex"]
 
 [params]
 

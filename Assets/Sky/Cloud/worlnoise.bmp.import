@@ -4,15 +4,16 @@ importer="3d_texture"
 type="CompressedTexture3D"
 uid="uid://c4dp6g6gouj2b"
 path.bptc="res://.godot/imported/worlnoise.bmp-06b653f661cfd9b4a4a5fee05ee5c553.bptc.ctex3d"
+path.astc="res://.godot/imported/worlnoise.bmp-06b653f661cfd9b4a4a5fee05ee5c553.astc.ctex3d"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Sky/Cloud/worlnoise.bmp"
-dest_files=["res://.godot/imported/worlnoise.bmp-06b653f661cfd9b4a4a5fee05ee5c553.bptc.ctex3d"]
+dest_files=["res://.godot/imported/worlnoise.bmp-06b653f661cfd9b4a4a5fee05ee5c553.bptc.ctex3d", "res://.godot/imported/worlnoise.bmp-06b653f661cfd9b4a4a5fee05ee5c553.astc.ctex3d"]
 
 [params]
 
