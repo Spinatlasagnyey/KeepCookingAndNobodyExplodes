@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d38jge4n57cui"
+path="res://.godot/imported/Playeryes hello, Im still alive, had to make a bunch of soups to stay alive - Kopie.wav-090d3bb28af0d93455fcb6438f9024ec.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Dialogues/First Contact/PLAYER/FIRST_AND_SECOND_CONTACT/Playeryes hello, Im still alive, had to make a bunch of soups to stay alive - Kopie.wav"
+dest_files=["res://.godot/imported/Playeryes hello, Im still alive, had to make a bunch of soups to stay alive - Kopie.wav-090d3bb28af0d93455fcb6438f9024ec.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

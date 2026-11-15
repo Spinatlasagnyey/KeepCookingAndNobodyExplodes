@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dao010y8pqa8m"
+path="res://.godot/imported/well good for him, but didnt you say you found MY location - Kopie.wav-65873f1c8d822d6942841ee1a109625e.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Dialogues/First Contact/PLAYER/FIRST_AND_SECOND_CONTACT/well good for him, but didnt you say you found MY location - Kopie.wav"
+dest_files=["res://.godot/imported/well good for him, but didnt you say you found MY location - Kopie.wav-65873f1c8d822d6942841ee1a109625e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

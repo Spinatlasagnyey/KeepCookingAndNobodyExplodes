@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://p7eb0g6k7g3l"
+path="res://.godot/imported/sigh please just come and get me, I dont know how many soups I can eat anymore - Kopie.wav-d0242b563f85d1dbd830a6b691225b77.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Dialogues/First Contact/PLAYER/FIRST_AND_SECOND_CONTACT/sigh please just come and get me, I dont know how many soups I can eat anymore - Kopie.wav"
+dest_files=["res://.godot/imported/sigh please just come and get me, I dont know how many soups I can eat anymore - Kopie.wav-d0242b563f85d1dbd830a6b691225b77.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

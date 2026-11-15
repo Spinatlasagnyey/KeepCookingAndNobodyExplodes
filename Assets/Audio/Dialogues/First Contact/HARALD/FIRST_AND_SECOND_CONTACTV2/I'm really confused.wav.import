@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cddq8ss7ebcoj"
+path="res://.godot/imported/I'm really confused.wav-70df98d17bcced0cb0efec62ceef035b.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/I'm really confused.wav"
+dest_files=["res://.godot/imported/I'm really confused.wav-70df98d17bcced0cb0efec62ceef035b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

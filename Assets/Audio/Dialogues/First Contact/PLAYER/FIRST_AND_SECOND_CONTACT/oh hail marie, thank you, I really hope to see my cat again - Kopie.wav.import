@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dew0arlj8hfcq"
+path="res://.godot/imported/oh hail marie, thank you, I really hope to see my cat again - Kopie.wav-a9d246ef62723fc18a6385650dc1612d.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Dialogues/First Contact/PLAYER/FIRST_AND_SECOND_CONTACT/oh hail marie, thank you, I really hope to see my cat again - Kopie.wav"
+dest_files=["res://.godot/imported/oh hail marie, thank you, I really hope to see my cat again - Kopie.wav-a9d246ef62723fc18a6385650dc1612d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

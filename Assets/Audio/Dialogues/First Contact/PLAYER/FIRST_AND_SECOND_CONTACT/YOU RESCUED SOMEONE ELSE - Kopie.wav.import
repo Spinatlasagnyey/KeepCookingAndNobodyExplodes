@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c3vahamu3wc1f"
+path="res://.godot/imported/YOU RESCUED SOMEONE ELSE - Kopie.wav-42c84e30a6bcec7476f29dd5cfee32ab.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Dialogues/First Contact/PLAYER/FIRST_AND_SECOND_CONTACT/YOU RESCUED SOMEONE ELSE - Kopie.wav"
+dest_files=["res://.godot/imported/YOU RESCUED SOMEONE ELSE - Kopie.wav-42c84e30a6bcec7476f29dd5cfee32ab.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://172feheon7l6"
+path="res://.godot/imported/oh its alright, luckly everything is close by - Kopie.wav-117a04838826e1372fbb4182896db724.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Dialogues/First Contact/PLAYER/FIRST_AND_SECOND_CONTACT/oh its alright, luckly everything is close by - Kopie.wav"
+dest_files=["res://.godot/imported/oh its alright, luckly everything is close by - Kopie.wav-117a04838826e1372fbb4182896db724.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

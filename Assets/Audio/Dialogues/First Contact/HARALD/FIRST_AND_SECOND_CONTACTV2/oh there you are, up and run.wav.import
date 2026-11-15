@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bejj6ehcoyl7a"
+path="res://.godot/imported/oh there you are, up and run.wav-3b45d4dd7cc48a1e130d65f606a38edd.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Dialogues/First Contact/HARALD/FIRST_AND_SECOND_CONTACTV2/oh there you are, up and run.wav"
+dest_files=["res://.godot/imported/oh there you are, up and run.wav-3b45d4dd7cc48a1e130d65f606a38edd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
