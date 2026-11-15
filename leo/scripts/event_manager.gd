@@ -44,7 +44,7 @@ func _ready() -> void:
 	time_passed_changed.emit(time_passed)
 	
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# hier vielleicht basierend auf aktuellem PoisonLevel 
 	# psychedelische Effekte einbauen
 	if Input.is_action_just_pressed("add_poison_debug"):

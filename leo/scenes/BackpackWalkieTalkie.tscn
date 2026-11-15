@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cpaoefyaydrgy"]
+
+[ext_resource type="PackedScene" uid="uid://b3a0o7oi5p6xd" path="res://Assets/3D-Objects/Backpack_and_WalkieTalkie.fbx" id="1_a3o2a"]
+[ext_resource type="Script" uid="uid://c4ehk5njdrc48" path="res://Szenen/Scripts/radio_backpack.gd" id="1_s0q2h"]
+[ext_resource type="AudioStream" uid="uid://dyx4va0n6d8bp" path="res://Assets/Audio/SFX/WalkyTalkySFX.wav" id="2_2wqsp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p0s5q"]
+size = Vector3(0.5078125, 0.6895752, 0.29223633)
+
+[node name="BackpackWalkieTalkie" type="Node3D" unique_id=773662149]
+script = ExtResource("1_s0q2h")
+alertSound = ExtResource("2_2wqsp")
+
+[node name="Backpack_and_WalkieTalkie" parent="." unique_id=1845331427 instance=ExtResource("1_a3o2a")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1265059631]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2130015836]
+transform = Transform3D(0.7290712, -0.11493162, 0.6747195, 0.19706069, 0.9793065, -0.046120018, -0.6554561, 0.16658543, 0.73663217, -0.5445944, -0.096996024, -0.66157603)
+shape = SubResource("BoxShape3D_p0s5q")
+
+[node name="AudioStreamPlayer3DRadio" type="AudioStreamPlayer3D" parent="." unique_id=1514244903 groups=["audioStreamPlayerRadio"]]
+unique_name_in_owner = true
+max_db = 0.0
+
+[connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]

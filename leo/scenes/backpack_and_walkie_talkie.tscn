@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dmirdug1gj0m7"]
+
+[ext_resource type="PackedScene" uid="uid://b3a0o7oi5p6xd" path="res://Assets/3D-Objects/Backpack_and_WalkieTalkie.fbx" id="1_v8fe8"]
+
+[node name="Backpack_and_WalkieTalkie" unique_id=1845331427 instance=ExtResource("1_v8fe8")]
+transform = Transform3D(1.16, 0, 0, 0, 1.16, 0, 0, 0, 1.16, 0, 0, 0)

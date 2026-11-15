@@ -2,25 +2,56 @@
 
 [ext_resource type="PackedScene" uid="uid://bxhugcm2o1ejt" path="res://Logik/DialogueManager/dialogue_system.tscn" id="1_tfupf"]
 [ext_resource type="Script" uid="uid://bxmbr5np6eeeq" path="res://Szenen/Scripts/camera_movment.gd" id="2_axpl5"]
-[ext_resource type="Script" uid="uid://oe5x8uh37k6l" path="res://Szenen/dialogue_collection.gd" id="2_q5mer"]
+[ext_resource type="Script" uid="uid://oe5x8uh37k6l" path="res://Szenen/Scripts/dialogue_collection.gd" id="2_q5mer"]
 [ext_resource type="Script" uid="uid://ba4v5gvvu0cmi" path="res://Logik/DialogueManager/dialogue_resource.gd" id="3_60yx3"]
 [ext_resource type="Resource" uid="uid://vj0qycedb74a" path="res://Logik/DialogueManager/dialogue_resource.tres" id="4_60yx3"]
 [ext_resource type="Resource" uid="uid://cf7vq6i6515e0" path="res://Resources/Dialogues/first_contact.tres" id="5_o5mgg"]
 [ext_resource type="PackedScene" uid="uid://dmy80vcehy38q" path="res://leo/scenes/ui.tscn" id="6_anygr"]
-[ext_resource type="Script" uid="uid://dsskgqav1tf1e" path="res://Szenen/radio_cube.gd" id="7_anygr"]
+[ext_resource type="Script" uid="uid://dsskgqav1tf1e" path="res://Szenen/Scripts/radio_cube.gd" id="7_anygr"]
 [ext_resource type="AudioStream" uid="uid://dyx4va0n6d8bp" path="res://Assets/Audio/SFX/WalkyTalkySFX.wav" id="9_unhmu"]
+[ext_resource type="AudioStream" uid="uid://bhkrmswbc2f4h" path="res://Assets/Audio/SFX/SFX_WIND_NEW.wav" id="10_js2be"]
+[ext_resource type="PackedScene" uid="uid://cp7kutsvoblvk" path="res://Assets/3D-Objects/Bonfire.fbx" id="11_bbouh"]
+[ext_resource type="PackedScene" uid="uid://cpaoefyaydrgy" path="res://leo/scenes/BackpackWalkieTalkie.tscn" id="11_rk8eg"]
+[ext_resource type="PackedScene" uid="uid://dmirdug1gj0m7" path="res://leo/scenes/backpack_and_walkie_talkie.tscn" id="12_krsln"]
+[ext_resource type="PackedScene" uid="uid://b3a0o7oi5p6xd" path="res://Assets/3D-Objects/Backpack_and_WalkieTalkie.fbx" id="12_ntwfu"]
+[ext_resource type="PackedScene" uid="uid://lyvgh238cpen" path="res://Assets/3D-Objects/suitcase_formushroomstash.fbx" id="13_rk8eg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bbouh"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ntwfu"]
+sky_material = SubResource("ProceduralSkyMaterial_bbouh")
+
+[sub_resource type="Environment" id="Environment_rk8eg"]
+background_mode = 2
+sky = SubResource("Sky_ntwfu")
+glow_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_0xql7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xql7"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_060g2"]
+size = Vector2(100, 100)
+
 [node name="MainEnviroment" type="Node3D" unique_id=1716867431]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=596399706]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=64381367]
+environment = SubResource("Environment_rk8eg")
+
 [node name="CameraRig" type="Node3D" parent="." unique_id=456108787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0807045, 0)
 script = ExtResource("2_axpl5")
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=1275184382]
+transform = Transform3D(1.1924881e-08, 0.3420201, -0.93969256, 0, 0.93969256, 0.3420201, 1, -4.0785486e-09, 1.1205722e-08, 0, 0, 0)
 current = true
+fov = 63.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=103350723]
 script = ExtResource("2_q5mer")
@@ -40,7 +71,7 @@ mouse_filter = 2
 mouse_filter = 2
 
 [node name="RadioCube" type="StaticBody3D" parent="." unique_id=916767358 node_paths=PackedStringArray("dialogue_collection")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0908935, 0.50154567, 0)
 script = ExtResource("7_anygr")
 alertSound = ExtResource("9_unhmu")
 dialogue_collection = NodePath("../CanvasLayer")
@@ -52,3 +83,33 @@ mesh = SubResource("BoxMesh_0xql7")
 shape = SubResource("BoxShape3D_0xql7")
 
 [node name="AudioStreamPlayer3DRadio" type="AudioStreamPlayer3D" parent="RadioCube" unique_id=1911349520 groups=["audioStreamPlayerRadio"]]
+max_db = 0.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2143861798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5751717, 0, -0.6599126)
+stream = ExtResource("10_js2be")
+max_db = 6.0
+autoplay = true
+
+[node name="3dObjects" type="Node3D" parent="." unique_id=636658562]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.117, 0, -0.048557192)
+
+[node name="BackpackWalkieTalkie" parent="3dObjects" unique_id=773662149 instance=ExtResource("11_rk8eg")]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 4.8399744, 0.7618359, 0)
+
+[node name="Backpack_and_WalkieTalkie2" parent="3dObjects" unique_id=1845331427 instance=ExtResource("12_krsln")]
+transform = Transform3D(0.9070703, 0.6186567, 0.37428215, -0.66567576, 0.9489323, 0.044756256, -0.28231, -0.24978246, 1.0970458, 4.486336, 0.67776585, 1.6280761)
+visible = false
+
+[node name="Bonfire" parent="3dObjects" unique_id=215885773 instance=ExtResource("11_bbouh")]
+transform = Transform3D(0.91705495, 0, 0.710359, 0, 1.1600001, 0, -0.710359, 0, 0.91705495, -1.3845471, 0, -5.164516)
+
+[node name="Backpack_and_WalkieTalkie" parent="3dObjects" unique_id=121921870 instance=ExtResource("12_ntwfu")]
+transform = Transform3D(0.9377296, 0.54264826, 0.41448087, -0.58100295, 1.004009, 0, -0.3587437, -0.20759895, 1.0834225, 4.4807253, 0.7251266, 1.5970541)
+visible = false
+
+[node name="suitcase_formushroomstash" parent="3dObjects" unique_id=143594808 instance=ExtResource("13_rk8eg")]
+transform = Transform3D(0.5128399, 0, 0.5053665, 0, 0.72, 0, -0.5053665, 0, 0.5128399, 1.7145724, 0.51567423, -3.4752252)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1792906771]
+mesh = SubResource("PlaneMesh_060g2")
