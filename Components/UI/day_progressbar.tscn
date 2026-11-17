@@ -19,12 +19,15 @@ func change_value(new_value: float) -> void:
 [sub_resource type="GDScript" id="GDScript_wikva"]
 script/source = "extends TextureProgressBar
 
-func _process(delta: float) -> void:
-	
+func _ready() -> void:
+	self.max_value = EventManager.SECONDS_PER_DAY
+	EventManager.time_passed_changed.connect(time_changed)
+
+func time_changed(value: float) -> void:
 	if EventManager.time_passed < EventManager.SECONDS_PER_DAY/2:
-		value = EventManager.time_passed
+		self.value = value
 	else:
-		value = EventManager.SECONDS_PER_DAY - EventManager.time_passed
+		self.value = EventManager.SECONDS_PER_DAY - value
 "
 
 [node name="DayProgressbar" type="Control" unique_id=588083069]

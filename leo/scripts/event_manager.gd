@@ -7,7 +7,7 @@ signal game_over_signal(game_over_message : String)
 signal new_day(dayInt : int, seconds_per_day : float)
 signal dialogue_alert(dialogue : DialogueResource)
 
-const SECONDS_PER_DAY = 20
+const SECONDS_PER_DAY = 360
 const RESCUE_DAY = 7
 
 const STARTING_FULLNESS = 0
@@ -16,7 +16,7 @@ const HUNGER_PER_DAY = 10
 
 const STARTING_POISON = 0
 const MAX_POISON = 20 
-const MINUS_POISON_PER_DAY = 20
+const MINUS_POISON_PER_DAY = 0
 
 @onready var day_timer : Timer = %DayTimer
 
@@ -65,7 +65,6 @@ func _physics_process(_delta: float) -> void:
 	check_dialogue_due()
 		
 func _on_day_timer_timeout() -> void:
-	print("timer timeout")
 	time_passed += day_timer.wait_time
 	time_passed_changed.emit(time_passed)
 		
